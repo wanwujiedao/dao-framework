@@ -1,8 +1,6 @@
 package com.dao.framework.redis.options;
 
 import com.dao.framework.redis.abstracts.AbstractDaoRedisOptions;
-import com.wwjd.framework.utils.DaoConstantsUtils;
-import com.wwjd.framework.utils.DaoStringUtils;
 import org.springframework.stereotype.Component;
 
 /**
@@ -25,37 +23,9 @@ public class DaoOptionsForString extends AbstractDaoRedisOptions {
      * @author 阿导
      * @time 2019/8/22 :00
      */
-    public boolean set(String key, String value) {
+    public String set(String key, String value) {
         // 返回结果
-        return this.returnResult(DaoStringUtils.equals(DaoConstantsUtils.OK, this.jedis.set(key, value)));
-    }
-
-    /**
-     * 只有key 不存在时才把key value set 到redis
-     *
-     * @param key   键
-     * @param value 值
-     * @return boolean
-     * @author 阿导
-     * @time 2019/8/22 :00
-     */
-    public boolean setnx(String key, String value) {
-        // 返回结果
-        return this.returnResult(DaoStringUtils.equals(DaoConstantsUtils.OK, this.jedis.set(key, value, "nx")));
-    }
-
-    /**
-     * 只有 key 存在是，才把key value set 到redis
-     *
-     * @param key   键
-     * @param value 值
-     * @return boolean
-     * @author 阿导
-     * @time 2019/8/22 :00
-     */
-    public boolean setxx(String key, String value) {
-        // 返回结果
-        return dealResult(this.jedis.set(key, value, "xx"));
+        return this.returnResult(this.jedis.set(key, value));
     }
 
     /**
@@ -63,14 +33,13 @@ public class DaoOptionsForString extends AbstractDaoRedisOptions {
      *
      * @param key   键
      * @param value 值
-     * @param ttl   过期时间
      * @return boolean
      * @author 阿导
      * @time 2019/8/22 :00
      */
-    public boolean set(String key, String value, int ttl) {
-        // 结果处理
-        return dealExpireResult(this.jedis.set(key, value), key, ttl);
+    public String set(byte[] key, byte[] value) {
+        // 返回结果
+        return this.returnResult(this.jedis.set(key, value));
     }
 
     /**
@@ -78,14 +47,28 @@ public class DaoOptionsForString extends AbstractDaoRedisOptions {
      *
      * @param key   键
      * @param value 值
-     * @param ttl   过期时间
      * @return boolean
      * @author 阿导
      * @time 2019/8/22 :00
      */
-    public boolean setnx(String key, String value, int ttl) {
-        // 结果处理
-        return dealExpireResult(this.jedis.set(key, value, "nx"), key, ttl);
+    public String setnx(String key, String value) {
+        // 返回结果
+        return this.returnResult(this.jedis.set(key, value, "nx"));
+    }
+
+
+    /**
+     * 只有key 不存在时才把key value set 到redis
+     *
+     * @param key   键
+     * @param value 值
+     * @return boolean
+     * @author 阿导
+     * @time 2019/8/22 :00
+     */
+    public String setnx(byte[] key, byte[] value) {
+        // 返回结果
+        return this.returnResult(this.jedis.set(key, value, "nx".getBytes()));
     }
 
     /**
@@ -93,15 +76,27 @@ public class DaoOptionsForString extends AbstractDaoRedisOptions {
      *
      * @param key   键
      * @param value 值
-     * @param ttl   过期时间
      * @return boolean
      * @author 阿导
      * @time 2019/8/22 :00
      */
-    public boolean setxx(String key, String value, int ttl) {
+    public String setxx(String key, String value) {
+        // 返回结果
+        return this.returnResult(this.jedis.set(key, value, "xx"));
+    }
 
-        // 结果处理
-        return dealExpireResult(this.jedis.set(key, value, "xx"), key, ttl);
+    /**
+     * 只有 key 存在是，才把key value set 到redis
+     *
+     * @param key   键
+     * @param value 值
+     * @return boolean
+     * @author 阿导
+     * @time 2019/8/22 :00
+     */
+    public String setxx(byte[] key, byte[] value) {
+        // 返回结果
+        return this.returnResult(this.jedis.set(key, value, "xx".getBytes()));
     }
 
     /**
@@ -117,94 +112,6 @@ public class DaoOptionsForString extends AbstractDaoRedisOptions {
         return this.returnResult(this.jedis.get(key));
     }
 
-
-    /**
-     * 设置值
-     *
-     * @param key   键
-     * @param value 值
-     * @return boolean
-     * @author 阿导
-     * @time 2019/8/22 :00
-     */
-    public boolean set(byte[] key, byte[] value) {
-        // 返回结果
-        return this.returnResult(DaoStringUtils.equals(DaoConstantsUtils.OK, this.jedis.set(key, value)));
-    }
-
-    /**
-     * 只有key 不存在时才把key value set 到redis
-     *
-     * @param key   键
-     * @param value 值
-     * @return boolean
-     * @author 阿导
-     * @time 2019/8/22 :00
-     */
-    public boolean setnx(byte[] key, byte[] value) {
-        // 返回结果
-        return this.returnResult(DaoStringUtils.equals(DaoConstantsUtils.OK, this.jedis.set(key, value, "nx".getBytes())));
-    }
-
-    /**
-     * 只有 key 存在是，才把key value set 到redis
-     *
-     * @param key   键
-     * @param value 值
-     * @return boolean
-     * @author 阿导
-     * @time 2019/8/22 :00
-     */
-    public boolean setxx(byte[] key, byte[] value) {
-        // 返回结果
-        return dealResult(this.jedis.set(key, value, "xx".getBytes()));
-    }
-
-    /**
-     * 设置值
-     *
-     * @param key   键
-     * @param value 值
-     * @param ttl   过期时间
-     * @return boolean
-     * @author 阿导
-     * @time 2019/8/22 :00
-     */
-    public boolean set(byte[] key, byte[] value, int ttl) {
-        // 结果处理
-        return dealExpireResult(this.jedis.set(key, value), key, ttl);
-    }
-
-    /**
-     * 只有key 不存在时才把key value set 到redis
-     *
-     * @param key   键
-     * @param value 值
-     * @param ttl   过期时间
-     * @return boolean
-     * @author 阿导
-     * @time 2019/8/22 :00
-     */
-    public boolean setnx(byte[] key, byte[] value, int ttl) {
-        // 结果处理
-        return dealExpireResult(this.jedis.set(key, value, "nx".getBytes()), key, ttl);
-    }
-
-    /**
-     * 只有 key 存在是，才把key value set 到redis
-     *
-     * @param key   键
-     * @param value 值
-     * @param ttl   过期时间
-     * @return boolean
-     * @author 阿导
-     * @time 2019/8/22 :00
-     */
-    public boolean setxx(byte[] key, byte[] value, int ttl) {
-        // 结果处理
-        return dealExpireResult(this.jedis.set(key, value, "xx".getBytes()), key, ttl);
-    }
-
     /**
      * 获取 redis 键的值
      *
@@ -217,4 +124,6 @@ public class DaoOptionsForString extends AbstractDaoRedisOptions {
         // 返回结果
         return this.returnResult(this.jedis.get(key));
     }
+
+
 }

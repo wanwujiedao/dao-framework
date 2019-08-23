@@ -1,8 +1,6 @@
 package com.dao.framework.redis.options;
 
 import com.dao.framework.redis.abstracts.AbstractDaoRedisOptions;
-import com.wwjd.framework.utils.DaoConstantsUtils;
-import com.wwjd.framework.utils.DaoStringUtils;
 import redis.clients.jedis.ScanParams;
 import redis.clients.jedis.ScanResult;
 
@@ -31,6 +29,18 @@ public class DaoOptionsForHash extends AbstractDaoRedisOptions {
         return this.returnResult(this.jedis.hdel(key, fields));
     }
 
+    /**
+     * 删除
+     *
+     * @param key    键
+     * @param fields 域
+     * @return java.lang.Long
+     * @author 阿导
+     * @time 2019/8/23 :00
+     */
+    public Long hdelete(byte[] key, byte[]... fields) {
+        return this.returnResult(this.jedis.hdel(key, fields));
+    }
 
     /**
      * 判断键属性是否存在
@@ -44,182 +54,6 @@ public class DaoOptionsForHash extends AbstractDaoRedisOptions {
     public boolean hexist(String key, String field) {
         return this.returnResult(this.jedis.hexists(key, field));
     }
-
-    /**
-     * 获取哈希的值
-     *
-     * @param key   键
-     * @param field 域
-     * @return java.lang.String
-     * @author 阿导
-     * @time 2019/8/23 :00
-     */
-    public String hget(String key, String field) {
-        return this.returnResult(this.jedis.hget(key, field));
-    }
-
-
-    /**
-     * 获取在哈希表中指定 key 的所有字段和值
-     *
-     * @param key
-     * @return java.util.Map<java.lang.String, java.lang.String>
-     * @author 阿导
-     * @time 2019/8/23 :00
-     */
-    public Map<String, String> hgetAll(String key) {
-        return this.returnResult(this.jedis.hgetAll(key));
-    }
-
-    /**
-     * 为哈希表 key 中的指定字段的整数值加上增量 incr
-     *
-     * @param key   键
-     * @param field 域
-     * @param incr  增量
-     * @return java.lang.Long
-     * @author 阿导
-     * @time 2019/8/23 :00
-     */
-    public Long hincrBy(String key, String field, long incr) {
-        return this.returnResult(this.jedis.hincrBy(key, field, incr));
-    }
-
-    /**
-     * 为哈希表 key 中的指定字段的浮点数值加上增量 incr
-     *
-     * @param key   键
-     * @param field 域
-     * @param incr  增量
-     * @return java.lang.Double
-     * @author 阿导
-     * @time 2019/8/23 :00
-     */
-    public Double hincrByFloat(String key, String field, double incr) {
-        return this.returnResult(this.jedis.hincrByFloat(key, field, incr));
-    }
-
-    /**
-     * 获取所有哈希表中的字段
-     *
-     * @param key
-     * @return java.util.Set<java.lang.String>
-     * @author 阿导
-     * @time 2019/8/23 :00
-     */
-    public Set<String> hkeys(String key) {
-        return this.returnResult(this.jedis.hkeys(key));
-    }
-
-
-    /**
-     * 获取哈希表中字段的数量
-     *
-     * @param key 键
-     * @return java.lang.Long
-     * @author 阿导
-     * @time 2019/8/23 :00
-     */
-    public Long hlen(String key) {
-        return this.returnResult(this.jedis.hlen(key));
-    }
-
-    /**
-     * 获取所有给定字段的值
-     *
-     * @param key    键
-     * @param fields 域
-     * @return java.util.List<java.lang.String>
-     * @author 阿导
-     * @time 2019/8/23 :00
-     */
-    public List<String> hmget(String key, String... fields) {
-        return this.returnResult(this.jedis.hmget(key, fields));
-    }
-
-    /**
-     * 同时将多个 field-value (域-值)对设置到哈希表 key 中
-     *
-     * @param key 键
-     * @param map 域-值对
-     * @return boolean
-     * @author 阿导
-     * @time 2019/8/23 :00
-     */
-    public boolean hmset(String key, Map<String, String> map) {
-        return dealResult(this.jedis.hmset(key, map));
-    }
-
-
-    /**
-     * 将哈希表 key 中的字段 field 的值设为 value
-     *
-     * @param key   键
-     * @param field 域
-     * @param value 值
-     * @return boolean
-     * @author 阿导
-     * @time 2019/8/23 :00
-     */
-    public boolean hset(String key, String field, String value) {
-        return dealResult(this.jedis.hset(key, field, value));
-    }
-
-
-    /**
-     * 只有在字段 field 不存在时，设置哈希表字段的值
-     *
-     * @param key   键
-     * @param field 域
-     * @param value 值
-     * @return boolean
-     * @author 阿导
-     * @time 2019/8/23 :00
-     */
-    public boolean hsetnx(String key, String field, String value) {
-        return dealResult(this.jedis.hsetnx(key, field, value));
-    }
-
-
-    /**
-     * 获取哈希表中所有值
-     *
-     * @param key 键
-     * @return java.util.List<java.lang.String>
-     * @author 阿导
-     * @time 2019/8/23 :00
-     */
-    public List<String> hvals(String key) {
-        return this.returnResult(this.jedis.hvals(key));
-    }
-
-    /**
-     * 迭代哈希表中的键值对
-     *
-     * @param key    键
-     * @param cursor 游标
-     * @return redis.clients.jedis.ScanResult<java.util.Map.Entry < java.lang.String, java.lang.String>>
-     * @author 阿导
-     * @time 2019/8/23 :00
-     */
-    public ScanResult<Map.Entry<String, String>> hscan(String key, int cursor) {
-        return this.returnResult(this.jedis.hscan(key, cursor));
-    }
-
-    /**
-     * 迭代哈希表中的键值对
-     *
-     * @param key        键
-     * @param cursor     游标
-     * @param scanParams
-     * @return redis.clients.jedis.ScanResult<java.util.Map.Entry < java.lang.String, java.lang.String>>
-     * @author 阿导
-     * @time 2019/8/23 :00
-     */
-    public ScanResult<Map.Entry<String, String>> hscan(String key, int cursor, ScanParams scanParams) {
-        return this.returnResult(this.jedis.hscan(key, cursor, scanParams));
-    }
-
 
     /**
      * 判断键属性是否存在
@@ -239,6 +73,19 @@ public class DaoOptionsForHash extends AbstractDaoRedisOptions {
      *
      * @param key   键
      * @param field 域
+     * @return java.lang.String
+     * @author 阿导
+     * @time 2019/8/23 :00
+     */
+    public String hget(String key, String field) {
+        return this.returnResult(this.jedis.hget(key, field));
+    }
+
+    /**
+     * 获取哈希的值
+     *
+     * @param key   键
+     * @param field 域
      * @return byte[]
      * @author 阿导
      * @time 2019/8/23 :00
@@ -251,12 +98,38 @@ public class DaoOptionsForHash extends AbstractDaoRedisOptions {
      * 获取在哈希表中指定 key 的所有字段和值
      *
      * @param key
+     * @return java.util.Map<java.lang.String, java.lang.String>
+     * @author 阿导
+     * @time 2019/8/23 :00
+     */
+    public Map<String, String> hgetAll(String key) {
+        return this.returnResult(this.jedis.hgetAll(key));
+    }
+
+    /**
+     * 获取在哈希表中指定 key 的所有字段和值
+     *
+     * @param key
      * @return java.util.Map<byte [ ], byte [ ]>
      * @author 阿导
      * @time 2019/8/23 :00
      */
     public Map<byte[], byte[]> hgetAll(byte[] key) {
         return this.returnResult(this.jedis.hgetAll(key));
+    }
+
+    /**
+     * 为哈希表 key 中的指定字段的整数值加上增量 incr
+     *
+     * @param key   键
+     * @param field 域
+     * @param incr  增量
+     * @return java.lang.Long
+     * @author 阿导
+     * @time 2019/8/23 :00
+     */
+    public Long hincrBy(String key, String field, long incr) {
+        return this.returnResult(this.jedis.hincrBy(key, field, incr));
     }
 
     /**
@@ -283,8 +156,34 @@ public class DaoOptionsForHash extends AbstractDaoRedisOptions {
      * @author 阿导
      * @time 2019/8/23 :00
      */
+    public Double hincrByFloat(String key, String field, double incr) {
+        return this.returnResult(this.jedis.hincrByFloat(key, field, incr));
+    }
+
+    /**
+     * 为哈希表 key 中的指定字段的浮点数值加上增量 incr
+     *
+     * @param key   键
+     * @param field 域
+     * @param incr  增量
+     * @return java.lang.Double
+     * @author 阿导
+     * @time 2019/8/23 :00
+     */
     public Double hincrByFloat(byte[] key, byte[] field, double incr) {
         return this.returnResult(this.jedis.hincrByFloat(key, field, incr));
+    }
+
+    /**
+     * 获取所有哈希表中的字段
+     *
+     * @param key
+     * @return java.util.Set<java.lang.String>
+     * @author 阿导
+     * @time 2019/8/23 :00
+     */
+    public Set<String> hkeys(String key) {
+        return this.returnResult(this.jedis.hkeys(key));
     }
 
     /**
@@ -307,8 +206,33 @@ public class DaoOptionsForHash extends AbstractDaoRedisOptions {
      * @author 阿导
      * @time 2019/8/23 :00
      */
+    public Long hlen(String key) {
+        return this.returnResult(this.jedis.hlen(key));
+    }
+
+    /**
+     * 获取哈希表中字段的数量
+     *
+     * @param key 键
+     * @return java.lang.Long
+     * @author 阿导
+     * @time 2019/8/23 :00
+     */
     public Long hlen(byte[] key) {
         return this.returnResult(this.jedis.hlen(key));
+    }
+
+    /**
+     * 获取所有给定字段的值
+     *
+     * @param key    键
+     * @param fields 域
+     * @return java.util.List<java.lang.String>
+     * @author 阿导
+     * @time 2019/8/23 :00
+     */
+    public List<String> hmget(String key, String... fields) {
+        return this.returnResult(this.jedis.hmget(key, fields));
     }
 
     /**
@@ -329,12 +253,25 @@ public class DaoOptionsForHash extends AbstractDaoRedisOptions {
      *
      * @param key 键
      * @param map 域-值对
-     * @return boolean
+     * @return java.lang.String
      * @author 阿导
      * @time 2019/8/23 :00
      */
-    public boolean hmset(byte[] key, Map<byte[], byte[]> map) {
-        return dealResult(this.jedis.hmset(key, map));
+    public String hmset(String key, Map<String, String> map) {
+        return this.returnResult(this.jedis.hmset(key, map));
+    }
+
+    /**
+     * 同时将多个 field-value (域-值)对设置到哈希表 key 中
+     *
+     * @param key 键
+     * @param map 域-值对
+     * @return java.lang.String
+     * @author 阿导
+     * @time 2019/8/23 :00
+     */
+    public String hmset(byte[] key, Map<byte[], byte[]> map) {
+        return this.returnResult(this.jedis.hmset(key, map));
     }
 
     /**
@@ -343,12 +280,26 @@ public class DaoOptionsForHash extends AbstractDaoRedisOptions {
      * @param key   键
      * @param field 域
      * @param value 值
-     * @return boolean
+     * @return java.lang.Long
      * @author 阿导
      * @time 2019/8/23 :00
      */
-    public boolean hset(byte[] key, byte[] field, byte[] value) {
-        return dealResult(this.jedis.hset(key, field, value));
+    public Long hset(String key, String field, String value) {
+        return this.returnResult(this.jedis.hset(key, field, value));
+    }
+
+    /**
+     * 将哈希表 key 中的字段 field 的值设为 value
+     *
+     * @param key   键
+     * @param field 域
+     * @param value 值
+     * @return java.lang.Long
+     * @author 阿导
+     * @time 2019/8/23 :00
+     */
+    public Long hset(byte[] key, byte[] field, byte[] value) {
+        return this.returnResult(this.jedis.hset(key, field, value));
     }
 
     /**
@@ -357,12 +308,38 @@ public class DaoOptionsForHash extends AbstractDaoRedisOptions {
      * @param key   键
      * @param field 域
      * @param value 值
-     * @return boolean
+     * @return java.lang.Long
      * @author 阿导
      * @time 2019/8/23 :00
      */
-    public boolean hsetnx(byte[] key, byte[] field, byte[] value) {
-        return dealResult(this.jedis.hsetnx(key, field, value));
+    public Long hsetnx(String key, String field, String value) {
+        return this.returnResult(this.jedis.hsetnx(key, field, value));
+    }
+
+    /**
+     * 只有在字段 field 不存在时，设置哈希表字段的值
+     *
+     * @param key   键
+     * @param field 域
+     * @param value 值
+     * @return java.lang.Long
+     * @author 阿导
+     * @time 2019/8/23 :00
+     */
+    public Long hsetnx(byte[] key, byte[] field, byte[] value) {
+        return this.returnResult(this.jedis.hsetnx(key, field, value));
+    }
+
+    /**
+     * 获取哈希表中所有值
+     *
+     * @param key 键
+     * @return java.util.List<java.lang.String>
+     * @author 阿导
+     * @time 2019/8/23 :00
+     */
+    public List<String> hvals(String key) {
+        return this.returnResult(this.jedis.hvals(key));
     }
 
     /**
@@ -382,6 +359,19 @@ public class DaoOptionsForHash extends AbstractDaoRedisOptions {
      *
      * @param key    键
      * @param cursor 游标
+     * @return redis.clients.jedis.ScanResult<java.util.Map.Entry < java.lang.String, java.lang.String>>
+     * @author 阿导
+     * @time 2019/8/23 :00
+     */
+    public ScanResult<Map.Entry<String, String>> hscan(String key, int cursor) {
+        return this.returnResult(this.jedis.hscan(key, cursor));
+    }
+
+    /**
+     * 迭代哈希表中的键值对
+     *
+     * @param key    键
+     * @param cursor 游标
      * @return redis.clients.jedis.ScanResult<java.util.Map.Entry < byte [ ], byte [ ]>>
      * @author 阿导
      * @time 2019/8/23 :00
@@ -391,16 +381,17 @@ public class DaoOptionsForHash extends AbstractDaoRedisOptions {
     }
 
     /**
-     * 删除
+     * 迭代哈希表中的键值对
      *
-     * @param key    键
-     * @param fields 域
-     * @return java.lang.Long
+     * @param key        键
+     * @param cursor     游标
+     * @param scanParams
+     * @return redis.clients.jedis.ScanResult<java.util.Map.Entry < java.lang.String, java.lang.String>>
      * @author 阿导
      * @time 2019/8/23 :00
      */
-    public Long hdelete(byte[] key, byte[]... fields) {
-        return this.returnResult(this.jedis.hdel(key, fields));
+    public ScanResult<Map.Entry<String, String>> hscan(String key, int cursor, ScanParams scanParams) {
+        return this.returnResult(this.jedis.hscan(key, cursor, scanParams));
     }
 
     /**
