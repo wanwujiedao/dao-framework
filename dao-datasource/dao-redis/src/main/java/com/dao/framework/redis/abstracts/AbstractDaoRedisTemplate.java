@@ -53,4 +53,34 @@ public abstract class AbstractDaoRedisTemplate{
         daoOptionsForString.beforOptions(annotation,database);
         return daoOptionsForString;
     }
+
+
+    /**
+     * 操作哈希工具集
+     *
+     * @return com.dao.framework.redis.options.DaoOptionsForHash
+     * @author 阿导
+     * @time 2019/8/22 :00
+     */
+    public DaoOptionsForHash optionsForHash() throws Exception {
+        //获取本类注解的值
+        DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
+        daoOptionsForHash.beforOptions(annotation, DaoConstantsUtils.BAR_ZERO);
+        return daoOptionsForHash;
+    }
+
+
+    /**
+     * 操作哈希工具集,可选取当前链接源的数据库
+     *
+     * @return com.dao.framework.redis.options.DaoOptionsForHash
+     * @author 阿导
+     * @time 2019/8/22 :00
+     */
+    public DaoOptionsForHash optionsForHash(int database) throws Exception {
+        //获取本类注解的值
+        DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
+        daoOptionsForHash.beforOptions(annotation,database);
+        return daoOptionsForHash;
+    }
 }
