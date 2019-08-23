@@ -16,229 +16,205 @@ import org.springframework.stereotype.Component;
 public class DaoOptionsForString extends AbstractDaoRedisOptions {
 
 
-
     /**
      * 设置值
      *
-     * @author 阿导
-     * @time 2019/8/22 :00
-     * @param key 键
+     * @param key   键
      * @param value 值
      * @return boolean
-     */
-    public boolean set(String key,String value){
-        String rs = this.jedis.set(key, value);
-        afterOptions();
-        return DaoStringUtils.equals(DaoConstantsUtils.OK,rs);
-    }
-
-    /**
-     * 只有key 不存在时才把key value set 到redis
-     *
      * @author 阿导
      * @time 2019/8/22 :00
-     * @param key 键
-     * @param value 值
-     * @return boolean
      */
-    public boolean setnx(String key,String value){
-        String rs = this.jedis.set(key, value,"nx");
-        afterOptions();
-        return DaoStringUtils.equals(DaoConstantsUtils.OK,rs);
-    }
-    /**
-     * 只有 key 存在是，才把key value set 到redis
-     *
-     * @author 阿导
-     * @time 2019/8/22 :00
-     * @param key 键
-     * @param value 值
-     * @return boolean
-     */
-    public boolean setxx(String key,String value){
-        // redis 操作
-        String rs = this.jedis.set(key, value,"xx");
+    public boolean set(String key, String value) {
         // 返回结果
-        return dealResult(rs);
-    }
-
-    /**
-     * 设置值
-     *
-     * @author 阿导
-     * @time 2019/8/22 :00
-     * @param key 键
-     * @param value 值
-     * @param ttl 过期时间
-     * @return boolean
-     */
-    public boolean set(String key,String value,int ttl){
-        // redis 操作
-        String rs = this.jedis.set(key, value);
-        // 结果处理
-        return  dealExpireResult(rs,key,ttl);
+        return this.returnResult(DaoStringUtils.equals(DaoConstantsUtils.OK, this.jedis.set(key, value)));
     }
 
     /**
      * 只有key 不存在时才把key value set 到redis
      *
+     * @param key   键
+     * @param value 值
+     * @return boolean
      * @author 阿导
      * @time 2019/8/22 :00
-     * @param key 键
-     * @param value 值
-     * @param ttl 过期时间
-     * @return boolean
      */
-    public boolean setnx(String key,String value,int ttl){
-        // redis 操作
-        String rs = this.jedis.set(key, value,"nx");
-        // 结果处理
-        return  dealExpireResult(rs,key,ttl);
+    public boolean setnx(String key, String value) {
+        // 返回结果
+        return this.returnResult(DaoStringUtils.equals(DaoConstantsUtils.OK, this.jedis.set(key, value, "nx")));
     }
+
     /**
      * 只有 key 存在是，才把key value set 到redis
      *
+     * @param key   键
+     * @param value 值
+     * @return boolean
      * @author 阿导
      * @time 2019/8/22 :00
-     * @param key 键
-     * @param value 值
-     * @param ttl 过期时间
-     * @return boolean
      */
-    public boolean setxx(String key,String value,int ttl){
-        // redis 操作
-        String rs = this.jedis.set(key, value,"xx");
+    public boolean setxx(String key, String value) {
+        // 返回结果
+        return dealResult(this.jedis.set(key, value, "xx"));
+    }
+
+    /**
+     * 设置值
+     *
+     * @param key   键
+     * @param value 值
+     * @param ttl   过期时间
+     * @return boolean
+     * @author 阿导
+     * @time 2019/8/22 :00
+     */
+    public boolean set(String key, String value, int ttl) {
         // 结果处理
-        return  dealExpireResult(rs,key,ttl);
+        return dealExpireResult(this.jedis.set(key, value), key, ttl);
+    }
+
+    /**
+     * 只有key 不存在时才把key value set 到redis
+     *
+     * @param key   键
+     * @param value 值
+     * @param ttl   过期时间
+     * @return boolean
+     * @author 阿导
+     * @time 2019/8/22 :00
+     */
+    public boolean setnx(String key, String value, int ttl) {
+        // 结果处理
+        return dealExpireResult(this.jedis.set(key, value, "nx"), key, ttl);
+    }
+
+    /**
+     * 只有 key 存在是，才把key value set 到redis
+     *
+     * @param key   键
+     * @param value 值
+     * @param ttl   过期时间
+     * @return boolean
+     * @author 阿导
+     * @time 2019/8/22 :00
+     */
+    public boolean setxx(String key, String value, int ttl) {
+
+        // 结果处理
+        return dealExpireResult(this.jedis.set(key, value, "xx"), key, ttl);
     }
 
     /**
      * 获取 redis 键的值
      *
-     * @author 阿导
-     * @time 2019/8/22 :00
      * @param key
      * @return java.lang.String
+     * @author 阿导
+     * @time 2019/8/22 :00
      */
-    public String get(String key){
-        // 获取值
-        String rs = this.jedis.get(key);
+    public String get(String key) {
         // 返回结果
-        return this.returnResult(rs);
+        return this.returnResult(this.jedis.get(key));
     }
-
-
-
-
 
 
     /**
      * 设置值
      *
-     * @author 阿导
-     * @time 2019/8/22 :00
-     * @param key 键
+     * @param key   键
      * @param value 值
      * @return boolean
+     * @author 阿导
+     * @time 2019/8/22 :00
      */
-    public boolean set(byte[] key,byte[] value){
-        String rs = this.jedis.set(key, value);
-        afterOptions();
-        return DaoStringUtils.equals(DaoConstantsUtils.OK,rs);
+    public boolean set(byte[] key, byte[] value) {
+        // 返回结果
+        return this.returnResult(DaoStringUtils.equals(DaoConstantsUtils.OK, this.jedis.set(key, value)));
     }
 
     /**
      * 只有key 不存在时才把key value set 到redis
      *
-     * @author 阿导
-     * @time 2019/8/22 :00
-     * @param key 键
+     * @param key   键
      * @param value 值
      * @return boolean
+     * @author 阿导
+     * @time 2019/8/22 :00
      */
-    public boolean setnx(byte[] key,byte[] value){
-        String rs = this.jedis.set(key, value,"nx".getBytes());
-        afterOptions();
-        return DaoStringUtils.equals(DaoConstantsUtils.OK,rs);
+    public boolean setnx(byte[] key, byte[] value) {
+        // 返回结果
+        return this.returnResult(DaoStringUtils.equals(DaoConstantsUtils.OK, this.jedis.set(key, value, "nx".getBytes())));
     }
+
     /**
      * 只有 key 存在是，才把key value set 到redis
      *
-     * @author 阿导
-     * @time 2019/8/22 :00
-     * @param key 键
+     * @param key   键
      * @param value 值
      * @return boolean
+     * @author 阿导
+     * @time 2019/8/22 :00
      */
-    public boolean setxx(byte[] key,byte[] value){
-        // redis 操作
-        String rs = this.jedis.set(key, value,"xx".getBytes());
+    public boolean setxx(byte[] key, byte[] value) {
         // 返回结果
-        return dealResult(rs);
+        return dealResult(this.jedis.set(key, value, "xx".getBytes()));
     }
 
     /**
      * 设置值
      *
+     * @param key   键
+     * @param value 值
+     * @param ttl   过期时间
+     * @return boolean
      * @author 阿导
      * @time 2019/8/22 :00
-     * @param key 键
-     * @param value 值
-     * @param ttl 过期时间
-     * @return boolean
      */
-    public boolean set(byte[] key,byte[] value,int ttl){
-        // redis 操作
-        String rs = this.jedis.set(key, value);
+    public boolean set(byte[] key, byte[] value, int ttl) {
         // 结果处理
-        return  dealExpireResult(rs,key,ttl);
+        return dealExpireResult(this.jedis.set(key, value), key, ttl);
     }
 
     /**
      * 只有key 不存在时才把key value set 到redis
      *
+     * @param key   键
+     * @param value 值
+     * @param ttl   过期时间
+     * @return boolean
      * @author 阿导
      * @time 2019/8/22 :00
-     * @param key 键
-     * @param value 值
-     * @param ttl 过期时间
-     * @return boolean
      */
-    public boolean setnx(byte[] key,byte[] value,int ttl){
-        // redis 操作
-        String rs = this.jedis.set(key, value,"nx".getBytes());
+    public boolean setnx(byte[] key, byte[] value, int ttl) {
         // 结果处理
-        return  dealExpireResult(rs,key,ttl);
+        return dealExpireResult(this.jedis.set(key, value, "nx".getBytes()), key, ttl);
     }
+
     /**
      * 只有 key 存在是，才把key value set 到redis
      *
+     * @param key   键
+     * @param value 值
+     * @param ttl   过期时间
+     * @return boolean
      * @author 阿导
      * @time 2019/8/22 :00
-     * @param key 键
-     * @param value 值
-     * @param ttl 过期时间
-     * @return boolean
      */
-    public boolean setxx(byte[] key,byte[] value,int ttl){
-        // redis 操作
-        String rs = this.jedis.set(key, value,"xx".getBytes());
+    public boolean setxx(byte[] key, byte[] value, int ttl) {
         // 结果处理
-        return  dealExpireResult(rs,key,ttl);
+        return dealExpireResult(this.jedis.set(key, value, "xx".getBytes()), key, ttl);
     }
 
     /**
      * 获取 redis 键的值
      *
-     * @author 阿导
-     * @time 2019/8/22 :00
      * @param key
      * @return byte[]
+     * @author 阿导
+     * @time 2019/8/22 :00
      */
-    public byte[] get(byte[] key){
-        // 获取值
-        byte[] rs = this.jedis.get(key);
+    public byte[] get(byte[] key) {
         // 返回结果
-        return this.returnResult(rs);
+        return this.returnResult(this.jedis.get(key));
     }
 }

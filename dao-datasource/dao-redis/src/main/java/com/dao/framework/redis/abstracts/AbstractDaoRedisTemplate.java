@@ -2,6 +2,7 @@ package com.dao.framework.redis.abstracts;
 
 import com.dao.framework.redis.annos.DaoRedisSelect;
 import com.dao.framework.redis.options.DaoOptionsForHash;
+import com.dao.framework.redis.options.DaoOptionsForList;
 import com.dao.framework.redis.options.DaoOptionsForString;
 import com.wwjd.framework.utils.DaoConstantsUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,11 @@ public abstract class AbstractDaoRedisTemplate{
      */
     @Autowired
     private DaoOptionsForHash daoOptionsForHash;
+    /**
+     * redis 操作列表
+     */
+    @Autowired
+    private DaoOptionsForList daoOptionsForList;
 
     /**
      * 操作字符串工具集
@@ -82,5 +88,34 @@ public abstract class AbstractDaoRedisTemplate{
         DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
         daoOptionsForHash.beforOptions(annotation,database);
         return daoOptionsForHash;
+    }
+
+    /**
+     * 操作列表工具集
+     *
+     * @return com.dao.framework.redis.options.DaoOptionsForList
+     * @author 阿导
+     * @time 2019/8/22 :00
+     */
+    public DaoOptionsForList optionsForList() throws Exception {
+        //获取本类注解的值
+        DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
+        daoOptionsForList.beforOptions(annotation, DaoConstantsUtils.BAR_ZERO);
+        return daoOptionsForList;
+    }
+
+
+    /**
+     * 操作列表工具集,可选取当前链接源的数据库
+     *
+     * @return com.dao.framework.redis.options.DaoOptionsForList
+     * @author 阿导
+     * @time 2019/8/22 :00
+     */
+    public DaoOptionsForList optionsForList(int database) throws Exception {
+        //获取本类注解的值
+        DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
+        daoOptionsForList.beforOptions(annotation,database);
+        return daoOptionsForList;
     }
 }

@@ -29,28 +29,28 @@ public abstract class AbstractDaoRedisOptions {
     /**
      * 操作之前获取 jedis
      *
+     * @return void
      * @author 阿导
      * @time 2019/8/22 :00
-     * @return void
      */
-    protected void beforOptions(DaoRedisSelect annotation,int database) throws Exception {
+    protected void beforOptions(DaoRedisSelect annotation, int database) throws Exception {
         // 若注解不存在
-        if(annotation==null){
+        if (annotation == null) {
             throw new Exception("Please add annotation:DaoRedisSelect");
         }
         // 先获取注解对象
-        this.jedis=daoRedisFactory.getJedis(annotation.key(),database< DaoConstantsUtils.ZERO ?annotation.database():database);
+        this.jedis = daoRedisFactory.getJedis(annotation.key(), database < DaoConstantsUtils.ZERO ? annotation.database() : database);
     }
 
     /**
      * 操作结束之后关闭 jedis
      *
+     * @return void
      * @author 阿导
      * @time 2019/8/22 :00
-     * @return void
      */
     protected void afterOptions() {
-        if(jedis!=null) {
+        if (jedis != null) {
             jedis.close();
         }
     }
@@ -58,166 +58,247 @@ public abstract class AbstractDaoRedisOptions {
     /**
      * 设置过期时间
      *
-     * @author 阿导
-     * @time 2019/8/22 :00
      * @param key 键
      * @param ttl 过期世间
      * @return boolean
+     * @author 阿导
+     * @time 2019/8/22 :00
      */
-    public boolean expire(String key,int ttl){
+    protected boolean setExpire(String key, int ttl) {
         // 设置过期时间
         Long expire = this.jedis.expire(key, ttl);
         // 结果判断
-        return DaoStringUtils.equals(DaoConstantsUtils.L_ONE,expire);
+        return DaoStringUtils.equals(DaoConstantsUtils.L_ONE, expire);
     }
 
 
     /**
      * 设置过期时间
      *
-     * @author 阿导
-     * @time 2019/8/22 :00
      * @param key 键
      * @param ttl 过期世间
      * @return boolean
+     * @author 阿导
+     * @time 2019/8/22 :00
      */
-    public boolean expire(byte[] key,int ttl){
+    protected boolean setExpire(byte[] key, int ttl) {
         // 设置过期时间
         Long expire = this.jedis.expire(key, ttl);
         // 结果判断
-        return DaoStringUtils.equals(DaoConstantsUtils.L_ONE,expire);
+        return DaoStringUtils.equals(DaoConstantsUtils.L_ONE, expire);
+    }
+
+    /**
+     * 设置过期时间
+     *
+     * @param key 键
+     * @param ttl 过期世间
+     * @return boolean
+     * @author 阿导
+     * @time 2019/8/22 :00
+     */
+    public boolean expire(String key, int ttl) {
+        // 设置过期时间
+        Long expire = this.jedis.expire(key, ttl);
+        // 收尾工作
+        afterOptions();
+        // 结果判断
+        return DaoStringUtils.equals(DaoConstantsUtils.L_ONE, expire);
+    }
+
+
+    /**
+     * 设置过期时间
+     *
+     * @param key 键
+     * @param ttl 过期世间
+     * @return boolean
+     * @author 阿导
+     * @time 2019/8/22 :00
+     */
+    public boolean expire(byte[] key, int ttl) {
+        // 设置过期时间
+        Long expire = this.jedis.expire(key, ttl);
+        // 收尾工作
+        afterOptions();
+        // 结果判断
+        return DaoStringUtils.equals(DaoConstantsUtils.L_ONE, expire);
     }
 
 
     /**
      * 判断 key 是否存在
      *
-     * @author 阿导
-     * @time 2019/8/23 :00
      * @param key
      * @return boolean
+     * @author 阿导
+     * @time 2019/8/23 :00
      */
-    public boolean exists(String key){
-       return this.jedis.exists(key);
+    public boolean exists(String key) {
+        // 判断是否存在
+        Boolean rs = this.jedis.exists(key);
+        // 收尾工作
+        afterOptions();
+        // 返回结果
+        return rs;
     }
+
     /**
      * 判断 key 是否存在
      *
-     * @author 阿导
-     * @time 2019/8/23 :00
      * @param key
      * @return boolean
+     * @author 阿导
+     * @time 2019/8/23 :00
      */
-    public boolean exists(byte[] key){
-        return this.jedis.exists(key);
+    public boolean isExists(byte[] key) {
+        // 判断是否存在
+        Boolean rs = this.jedis.exists(key);
+        // 收尾工作
+        afterOptions();
+        // 返回结果
+        return rs;
     }
+
     /**
      * 判断 keys 是否存在
      *
-     * @author 阿导
-     * @time 2019/8/23 :00
      * @param keys
      * @return boolean
+     * @author 阿导
+     * @time 2019/8/23 :00
      */
-    public Long exists(String... keys){
-        return this.jedis.exists(keys);
+    public Long exists(String... keys) {
+        // 判断是否存在
+        Long rs = this.jedis.exists(keys);
+        // 收尾工作
+        afterOptions();
+        // 返回结果
+        return rs;
     }
+
     /**
      * 判断 keys 是否存在
      *
-     * @author 阿导
-     * @time 2019/8/23 :00
      * @param keys
      * @return java.lang.Long
+     * @author 阿导
+     * @time 2019/8/23 :00
      */
-    public Long exists(byte[]... keys){
-        return this.jedis.exists(keys);
+    public Long exists(byte[]... keys) {
+        // 判断是否存在
+        Long rs = this.jedis.exists(keys);
+        // 收尾工作
+        afterOptions();
+        // 返回结果
+        return rs;
     }
+
+
     /**
      * 删除 key
      *
-     * @author 阿导
-     * @time 2019/8/23 :00
      * @param key
      * @return java.lang.Long
+     * @author 阿导
+     * @time 2019/8/23 :00
      */
-    public Long delete(String key){
+    public Long delete(String key) {
         // 判断key 是否存在
-        if(exists(key)){
+        if (this.jedis.exists(key)) {
             // 删除并返回结果
-            return this.jedis.del(key);
+            Long rs = this.jedis.del(key);
+            // 收尾工作
+            afterOptions();
+            // 返回结果
+            return rs;
         }
         // 返回结果
-        return (long)DaoConstantsUtils.ZERO;
+        return (long) DaoConstantsUtils.ZERO;
     }
+
     /**
      * 删除 key
      *
-     * @author 阿导
-     * @time 2019/8/23 :00
      * @param key
      * @return java.lang.Long
+     * @author 阿导
+     * @time 2019/8/23 :00
      */
-    public Long delete(byte[] key){
+    public Long delete(byte[] key) {
         // 判断key 是否存在
-        if(exists(key)){
+        if (this.jedis.exists(key)) {
             // 删除并返回结果
-            return this.jedis.del(key);
+            Long rs = this.jedis.del(key);
+            // 收尾工作
+            afterOptions();
+            // 返回结果
+            return rs;
         }
         // 返回结果
-        return (long)DaoConstantsUtils.ZERO;
+        return (long) DaoConstantsUtils.ZERO;
     }
+
     /**
      * 删除 key
      *
-     * @author 阿导
-     * @time 2019/8/23 :00
      * @param keys
      * @return java.lang.Long
+     * @author 阿导
+     * @time 2019/8/23 :00
      */
-    public Long delete(String... keys){
+    public Long delete(String... keys) {
         // 判断key 是否存在
-        if(exists(keys)>DaoConstantsUtils.ZERO){
+        if (this.jedis.exists(keys) > DaoConstantsUtils.ZERO) {
             // 删除并返回结果
-            return this.jedis.del(keys);
+            Long rs = this.jedis.del(keys);
+            // 收尾工作
+            afterOptions();
+            // 返回结果
+            return rs;
         }
         // 返回结果
-        return (long)DaoConstantsUtils.ZERO;
+        return (long) DaoConstantsUtils.ZERO;
     }
+
     /**
      * 删除 key
      *
-     * @author 阿导
-     * @time 2019/8/23 :00
      * @param keys
      * @return java.lang.Long
+     * @author 阿导
+     * @time 2019/8/23 :00
      */
-    public Long delete(byte[]... keys){
+    public Long delete(byte[]... keys) {
         // 判断key 是否存在
-        if(exists(keys)>DaoConstantsUtils.ZERO){
+        if (this.jedis.exists(keys) > DaoConstantsUtils.ZERO) {
             // 删除并返回结果
-            return this.jedis.del(keys);
+            Long rs = this.jedis.del(keys);
+            // 收尾工作
+            afterOptions();
+            // 返回结果
+            return rs;
         }
         // 返回结果
-        return (long)DaoConstantsUtils.ZERO;
+        return (long) DaoConstantsUtils.ZERO;
     }
 
     /**
      * 处理过期时间的结果
      *
-     * @author 阿导
-     * @time 2019/8/22 :00
-     * @param rs 结果
+     * @param rs  结果
      * @param key 键
      * @param ttl 过期时间
      * @return boolean
+     * @author 阿导
+     * @time 2019/8/22 :00
      */
-    protected boolean dealExpireResult(String rs,String key,int ttl){
+    protected boolean dealExpireResult(String rs, String key, int ttl) {
         // 结果比较
         boolean status = DaoStringUtils.equals(DaoConstantsUtils.OK, rs);
         // 成功则设置过期时间
-        if(status) {
-            status = this.expire(key, ttl);
+        if (status) {
+            status = DaoStringUtils.equals(DaoConstantsUtils.L_ONE,this.jedis.expire(key, ttl));
         }
         // 收尾工作
         afterOptions();
@@ -229,19 +310,19 @@ public abstract class AbstractDaoRedisOptions {
     /**
      * 处理过期时间的结果
      *
-     * @author 阿导
-     * @time 2019/8/22 :00
-     * @param rs 结果
+     * @param rs  结果
      * @param key 键
      * @param ttl 过期时间
      * @return boolean
+     * @author 阿导
+     * @time 2019/8/22 :00
      */
-    protected boolean dealExpireResult(String rs,byte[] key,int ttl){
+    protected boolean dealExpireResult(String rs, byte[] key, int ttl) {
         // 结果比较
         boolean status = DaoStringUtils.equals(DaoConstantsUtils.OK, rs);
         // 成功则设置过期时间
-        if(status) {
-            status = this.expire(key, ttl);
+        if (status) {
+            status = DaoStringUtils.equals(DaoConstantsUtils.L_ONE,this.jedis.expire(key, ttl));
         }
         // 收尾工作
         afterOptions();
@@ -252,44 +333,45 @@ public abstract class AbstractDaoRedisOptions {
     /**
      * 处理结果
      *
-     * @author 阿导
-     * @time 2019/8/22 :00
      * @param rs 结果
      * @return boolean
+     * @author 阿导
+     * @time 2019/8/22 :00
      */
-    protected boolean dealResult(String rs){
+    protected boolean dealResult(String rs) {
         // 收尾工作
         afterOptions();
         // 返回结果
-        return  DaoStringUtils.equals(DaoConstantsUtils.OK, rs);
+        return DaoStringUtils.equals(DaoConstantsUtils.OK, rs);
     }
+
     /**
      * 处理结果
      *
-     * @author 阿导
-     * @time 2019/8/22 :00
      * @param rs 结果
      * @return boolean
+     * @author 阿导
+     * @time 2019/8/22 :00
      */
-    protected boolean dealResult(Long rs){
+    protected boolean dealResult(Long rs) {
         // 收尾工作
         afterOptions();
         // 返回结果
-        return  DaoStringUtils.equals(DaoConstantsUtils.L_ONE, rs);
+        return DaoStringUtils.equals(DaoConstantsUtils.L_ONE, rs);
     }
 
     /**
      * 返回结果
      *
-     * @author 阿导
-     * @time 2019/8/22 :00
      * @param rs 结果
      * @return boolean
+     * @author 阿导
+     * @time 2019/8/22 :00
      */
-    protected <T> T returnResult(T rs){
+    protected <T> T returnResult(T rs) {
         // 收尾工作
         afterOptions();
         // 返回结果
-        return  rs;
+        return rs;
     }
 }

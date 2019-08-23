@@ -1,2 +1,5 @@
 # Auto Configure
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.dao.framework.redis.template.DaoRedisTemplate,com.dao.framework.redis.options.DaoOptionsForString,com.dao.framework.redis.options.DaoOptionsForHash
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.dao.framework.redis.template.DaoRedisTemplate,\
+  com.dao.framework.redis.options.DaoOptionsForString,\
+  com.dao.framework.redis.options.DaoOptionsForHash,\
+  com.dao.framework.redis.options.DaoOptionsForList
