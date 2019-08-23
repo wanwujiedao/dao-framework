@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="dao-rabbitmq" />
+        <module name="dao-rocketmq" />
+        <module name="dao-sqlserver" />
+        <module name="dao-oracle" />
+        <module name="dao-mongodb" />
+        <module name="dao-redis" />
+        <module name="dao-hbase" />
+        <module name="dao-activemq" />
+        <module name="dao-test" />
+        <module name="dao-kafka" />
+        <module name="dao-utils" />
+        <module name="dao-mysql" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="dao-activemq" options="-parameters" />
+      <module name="dao-hbase" options="-parameters" />
+      <module name="dao-kafka" options="-parameters" />
+      <module name="dao-mongodb" options="-parameters" />
+      <module name="dao-mysql" options="-parameters" />
+      <module name="dao-oracle" options="-parameters" />
+      <module name="dao-rabbitmq" options="-parameters" />
+      <module name="dao-redis" options="-parameters" />
+      <module name="dao-rocketmq" options="-parameters" />
+      <module name="dao-sqlserver" options="-parameters" />
+      <module name="dao-test" options="-parameters" />
+      <module name="dao-utils" options="-parameters" />
+    </option>
+  </component>
+</project>

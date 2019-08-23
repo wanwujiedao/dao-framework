@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>framework</artifactId>
+        <groupId>com.dao</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>dao-datasource</artifactId>
+    <description>数据源</description>
+    <packaging>pom</packaging>
+    <modules>
+        <module>dao-mysql</module>
+        <module>dao-oracle</module>
+        <module>dao-sqlserver</module>
+        <module>dao-redis</module>
+        <module>dao-mongodb</module>
+        <module>dao-hbase</module>
+    </modules>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>com.dao</groupId>
+            <artifactId>dao-utils</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+
+</project>
