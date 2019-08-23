@@ -88,6 +88,120 @@ public abstract class AbstractDaoRedisOptions {
         return DaoStringUtils.equals(DaoConstantsUtils.L_ONE,expire);
     }
 
+
+    /**
+     * 判断 key 是否存在
+     *
+     * @author 阿导
+     * @time 2019/8/23 :00
+     * @param key
+     * @return boolean
+     */
+    public boolean exists(String key){
+       return this.jedis.exists(key);
+    }
+    /**
+     * 判断 key 是否存在
+     *
+     * @author 阿导
+     * @time 2019/8/23 :00
+     * @param key
+     * @return boolean
+     */
+    public boolean exists(byte[] key){
+        return this.jedis.exists(key);
+    }
+    /**
+     * 判断 keys 是否存在
+     *
+     * @author 阿导
+     * @time 2019/8/23 :00
+     * @param keys
+     * @return boolean
+     */
+    public Long exists(String... keys){
+        return this.jedis.exists(keys);
+    }
+    /**
+     * 判断 keys 是否存在
+     *
+     * @author 阿导
+     * @time 2019/8/23 :00
+     * @param keys
+     * @return java.lang.Long
+     */
+    public Long exists(byte[]... keys){
+        return this.jedis.exists(keys);
+    }
+    /**
+     * 删除 key
+     *
+     * @author 阿导
+     * @time 2019/8/23 :00
+     * @param key
+     * @return java.lang.Long
+     */
+    public Long delete(String key){
+        // 判断key 是否存在
+        if(exists(key)){
+            // 删除并返回结果
+            return this.jedis.del(key);
+        }
+        // 返回结果
+        return (long)DaoConstantsUtils.ZERO;
+    }
+    /**
+     * 删除 key
+     *
+     * @author 阿导
+     * @time 2019/8/23 :00
+     * @param key
+     * @return java.lang.Long
+     */
+    public Long delete(byte[] key){
+        // 判断key 是否存在
+        if(exists(key)){
+            // 删除并返回结果
+            return this.jedis.del(key);
+        }
+        // 返回结果
+        return (long)DaoConstantsUtils.ZERO;
+    }
+    /**
+     * 删除 key
+     *
+     * @author 阿导
+     * @time 2019/8/23 :00
+     * @param keys
+     * @return java.lang.Long
+     */
+    public Long delete(String... keys){
+        // 判断key 是否存在
+        if(exists(keys)>DaoConstantsUtils.ZERO){
+            // 删除并返回结果
+            return this.jedis.del(keys);
+        }
+        // 返回结果
+        return (long)DaoConstantsUtils.ZERO;
+    }
+    /**
+     * 删除 key
+     *
+     * @author 阿导
+     * @time 2019/8/23 :00
+     * @param keys
+     * @return java.lang.Long
+     */
+    public Long delete(byte[]... keys){
+        // 判断key 是否存在
+        if(exists(keys)>DaoConstantsUtils.ZERO){
+            // 删除并返回结果
+            return this.jedis.del(keys);
+        }
+        // 返回结果
+        return (long)DaoConstantsUtils.ZERO;
+    }
+
     /**
      * 处理过期时间的结果
      *
@@ -149,7 +263,20 @@ public abstract class AbstractDaoRedisOptions {
         // 返回结果
         return  DaoStringUtils.equals(DaoConstantsUtils.OK, rs);
     }
-
+    /**
+     * 处理结果
+     *
+     * @author 阿导
+     * @time 2019/8/22 :00
+     * @param rs 结果
+     * @return boolean
+     */
+    protected boolean dealResult(Long rs){
+        // 收尾工作
+        afterOptions();
+        // 返回结果
+        return  DaoStringUtils.equals(DaoConstantsUtils.L_ONE, rs);
+    }
 
     /**
      * 返回结果

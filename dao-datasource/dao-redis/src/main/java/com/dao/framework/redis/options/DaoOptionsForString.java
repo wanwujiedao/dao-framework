@@ -233,7 +233,7 @@ public class DaoOptionsForString extends AbstractDaoRedisOptions {
      * @author 阿导
      * @time 2019/8/22 :00
      * @param key
-     * @return java.lang.String
+     * @return byte[]
      */
     public byte[] get(byte[] key){
         // 获取值
