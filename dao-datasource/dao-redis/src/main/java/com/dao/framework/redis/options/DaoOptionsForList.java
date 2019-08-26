@@ -8,15 +8,15 @@ import java.util.List;
 /**
  * redis 操作列表
  *
- * @author 典羽
- * @CopyRight 三国
+ * @author 阿导
+ * @CopyRight 万物皆导
  * @Created 2019-08-23 11:20:00
  */
 public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 移出并获取列表的第一个元素， 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param args 键
      * @return java.util.List<java.lang.String>
@@ -27,7 +27,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 移出并获取列表的第一个元素， 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param args 键
      * @return java.util.List<byte[]>
@@ -38,7 +38,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 移出并获取列表的第一个元素， 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param timeout 超时时间
      * @param keys 键
@@ -50,7 +50,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 移出并获取列表的第一个元素， 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param timeout 超时时间
      * @param keys 键
@@ -62,7 +62,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 移出并获取列表的第一个元素， 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param timeout 超时时间
      * @param key 键
@@ -74,7 +74,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 移出并获取列表的第一个元素， 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param args 键
      * @return java.util.List<java.lang.String>
@@ -85,7 +85,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 移出并获取列表的最后一个元素， 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param args 键
      * @return java.util.List<byte[]>
@@ -96,7 +96,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 移出并获取列表的最后一个元素， 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param timeout 超时时间
      * @param keys 键
@@ -108,7 +108,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 移出并获取列表的最后一个元素， 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param timeout 超时时间
      * @param keys 键
@@ -120,7 +120,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 移出并获取列表的最后一个元素， 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param timeout 超时时间
      * @param key 键
@@ -132,7 +132,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 从列表中弹出一个值，将弹出的元素插入到另外一个列表中并返回它； 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param source 源
      * @param destination 目标
@@ -145,7 +145,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 从列表中弹出一个值，将弹出的元素插入到另外一个列表中并返回它； 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param source 源
      * @param destination 目标
@@ -158,7 +158,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 通过索引获取列表中的元素
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param index 索引
@@ -170,7 +170,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 通过索引获取列表中的元素
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param index 索引
@@ -182,7 +182,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 在列表的元素前插入元素
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param pivot 元素
@@ -195,7 +195,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 在列表的元素前插入元素
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param pivot 元素
@@ -208,7 +208,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 在列表的元素后插入元素
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param pivot 元素
@@ -221,7 +221,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 在列表的元素后插入元素
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param pivot 元素
@@ -234,7 +234,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 获取列表长度
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @return java.lang.Long
@@ -245,7 +245,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 获取列表长度
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @return java.lang.Long
@@ -256,7 +256,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 移出并获取列表的第一个元素
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @return java.lang.String
@@ -267,7 +267,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 移出并获取列表的第一个元素
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @return byte[]
@@ -278,7 +278,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 将一个或多个值插入到列表头部
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param values 值
@@ -290,7 +290,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 将一个或多个值插入到列表头部
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param values 值
@@ -302,7 +302,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 将一个值插入到已存在的列表头部
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param values 值
@@ -314,7 +314,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 将一个值插入到已存在的列表头部
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param values 值
@@ -326,7 +326,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 获取列表指定范围内的元素
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param start 开始
@@ -339,7 +339,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 获取列表指定范围内的元素
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param start 开始
@@ -352,7 +352,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 移除列表元素
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param count 删除数目，其中c ount 为 0 删除所有值为 value 的元素
@@ -365,7 +365,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 移除列表元素
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param count 删除数目，其中c ount 为 0 删除所有值为 value 的元素
@@ -378,7 +378,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 通过索引设置列表元素的值
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param index 位置
@@ -391,7 +391,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 通过索引设置列表元素的值
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param index 位置
@@ -404,7 +404,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 对一个列表进行修剪(trim)，就是说，让列表只保留指定区间内的元素，不在指定区间之内的元素都将被删除
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param start 开始
@@ -417,7 +417,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 对一个列表进行修剪(trim)，就是说，让列表只保留指定区间内的元素，不在指定区间之内的元素都将被删除
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param start 开始
@@ -430,7 +430,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 移除列表的最后一个元素，返回值为移除的元素
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @return java.lang.String
@@ -441,7 +441,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 移除列表的最后一个元素，返回值为移除的元素
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @return byte[]
@@ -452,7 +452,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 移除列表的最后一个元素，并将该元素添加到另一个列表并返回
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param source 源
      * @param destination 目标
@@ -464,7 +464,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 移除列表的最后一个元素，并将该元素添加到另一个列表并返回
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param source 源
      * @param destination 目标
@@ -476,7 +476,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 在列表中添加一个或多个值
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param values 值
@@ -488,7 +488,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 在列表中添加一个或多个值
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param values 值
@@ -500,7 +500,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 为已存在的列表添加值
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param values 值
@@ -512,7 +512,7 @@ public class DaoOptionsForList extends AbstractDaoRedisOptions {
     /** 
      * 为已存在的列表添加值
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param values 值

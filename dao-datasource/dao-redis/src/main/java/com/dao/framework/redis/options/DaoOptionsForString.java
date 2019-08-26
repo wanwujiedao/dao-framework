@@ -3,6 +3,8 @@ package com.dao.framework.redis.options;
 import com.dao.framework.redis.abstracts.AbstractDaoRedisOptions;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * redis 操作字符串
  *
@@ -42,34 +44,7 @@ public class DaoOptionsForString extends AbstractDaoRedisOptions {
         return this.returnResult(this.jedis.set(key, value));
     }
 
-    /**
-     * 只有key 不存在时才把key value set 到redis
-     *
-     * @param key   键
-     * @param value 值
-     * @return boolean
-     * @author 阿导
-     * @time 2019/8/22 :00
-     */
-    public String setnx(String key, String value) {
-        // 返回结果
-        return this.returnResult(this.jedis.set(key, value, "nx"));
-    }
 
-
-    /**
-     * 只有key 不存在时才把key value set 到redis
-     *
-     * @param key   键
-     * @param value 值
-     * @return boolean
-     * @author 阿导
-     * @time 2019/8/22 :00
-     */
-    public String setnx(byte[] key, byte[] value) {
-        // 返回结果
-        return this.returnResult(this.jedis.set(key, value, "nx".getBytes()));
-    }
 
     /**
      * 只有 key 存在是，才把key value set 到redis
@@ -124,6 +99,328 @@ public class DaoOptionsForString extends AbstractDaoRedisOptions {
         // 返回结果
         return this.returnResult(this.jedis.get(key));
     }
+    
+    /** 
+     * 返回 key 中字符串值的子字符
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param key 键
+     * @param startOffset 开始偏移量
+     * @param endOffset 结束偏移量
+     * @return java.lang.String
+     */
+    public String getrange(String key,long startOffset,long endOffset){
+        return this.returnResult(this.jedis.getrange(key,startOffset,endOffset));
+    }
+    /**
+     * 返回 key 中字符串值的子字符
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param key 键
+     * @param startOffset 开始偏移量
+     * @param endOffset 结束偏移量
+     * @return byte[]
+     */
+    public byte[] getrange(byte[] key,long startOffset,long endOffset){
+        return this.returnResult(this.jedis.getrange(key,startOffset,endOffset));
+    }
+
+    /**
+     * 将给定 key 的值设为 value ，并返回 key 的旧值(old value)
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param key
+     * @param newValue
+     * @return java.lang.String
+     */
+    public String getSet(String key,String newValue){
+        return this.returnResult(this.jedis.getSet(key, newValue));
+    }
+
+    /**
+     * 将给定 key 的值设为 value ，并返回 key 的旧值(old value)
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param key
+     * @param newValue
+     * @return byte[]
+     */
+    public byte[] getSet(byte[] key,byte[] newValue){
+        return this.returnResult(this.jedis.getSet(key, newValue));
+    }
+    /**
+     * 对 key 所储存的字符串值，获取指定偏移量上的位
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param key 键
+     * @param offset 偏移量
+     * @return java.lang.Boolean
+     */
+    public Boolean getbit(String key,long offset){
+        return this.returnResult(this.jedis.getbit(key,offset));
+    }
+    /**
+     * 对 key 所储存的字符串值，获取指定偏移量上的位
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param key 键
+     * @param offset 偏移量
+     * @return java.lang.Boolean
+     */
+    public Boolean getbit(byte[] key,long offset){
+        return this.returnResult(this.jedis.getbit(key,offset));
+    }
+    /**
+     * 获取所有(一个或多个)给定 key 的值
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param keys 键
+     * @return java.util.List<java.lang.String>
+     */
+    public List<String> mget(String... keys){
+        return this.returnResult(this.jedis.mget(keys));
+    }
+    /**
+     * 获取所有(一个或多个)给定 key 的值
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param keys 键
+     * @return java.util.List<byte[]>
+     */
+    public List<byte[]> mget(byte[]... keys){
+        return this.returnResult(this.jedis.mget(keys));
+    }
+    /**
+     * 对 key 所储存的字符串值，设置或清除指定偏移量上的位(bit)
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param key 键
+     * @param offset 偏移量
+     * @param value 值
+     * @return java.lang.Boolean
+     */
+    public Boolean setbit(String key,long offset,String value){
+        return this.returnResult(this.jedis.setbit(key,offset,value));
+    }
+    /**
+     * 对 key 所储存的字符串值，设置或清除指定偏移量上的位(bit)
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param key 键
+     * @param offset 偏移量
+     * @param value 值
+     * @return java.lang.Boolean
+     */
+    public Boolean setbit(String key,long offset,Boolean value){
+        return this.returnResult(this.jedis.setbit(key,offset,value));
+    }
+    /**
+     * 对 key 所储存的字符串值，设置或清除指定偏移量上的位(bit)
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param key 键
+     * @param offset 偏移量
+     * @param value 值
+     * @return java.lang.Boolean
+     */
+    public Boolean setbit(byte[] key,long offset,byte[] value){
+        return this.returnResult(this.jedis.setbit(key,offset,value));
+    }
+    /**
+     * 对 key 所储存的字符串值，设置或清除指定偏移量上的位(bit)
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param key 键
+     * @param offset 偏移量
+     * @param value 值
+     * @return java.lang.Boolean
+     */
+    public Boolean setbit(byte[] key,long offset,Boolean value){
+        return this.returnResult(this.jedis.setbit(key,offset,value));
+    }
+    /**
+     * 将值 value 关联到 key ，并将 key 的过期时间设为 seconds (以秒为单位)
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param key 键
+     * @param ttl 秒
+     * @param value 值
+     * @return java.lang.String
+     */
+    public String setEx(String key,int ttl ,String value){
+        return this.returnResult(this.jedis.setex(key, ttl, value));
+    }
+    /**
+     * 将值 value 关联到 key ，并将 key 的过期时间设为 seconds (以秒为单位)
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param key 键
+     * @param ttl 秒
+     * @param value 值
+     * @return java.lang.String
+     */
+    public String setEx(byte[] key,int ttl ,byte[] value){
+        return this.returnResult(this.jedis.setex(key, ttl, value));
+    }
+
+    /**
+     * 只有key 不存在时才把key value set 到redis
+     *
+     * @param key   键
+     * @param value 值
+     * @return boolean
+     * @author 阿导
+     * @time 2019/8/22 :00
+     */
+    public Long setnx(String key, String value) {
+        // 返回结果
+        return this.returnResult(this.jedis.setnx(key, value));
+    }
 
 
+    /**
+     * 只有key 不存在时才把key value set 到redis
+     *
+     * @param key   键
+     * @param value 值
+     * @return boolean
+     * @author 阿导
+     * @time 2019/8/22 :00
+     */
+    public Long setnx(byte[] key, byte[] value) {
+        // 返回结果
+        return this.returnResult(this.jedis.setnx(key, value));
+    }
+    /**
+     * 用 value 参数覆写给定 key 所储存的字符串值，从偏移量 offset 开始
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param key 键
+     * @param offset 偏移量
+     * @param value 值
+     * @return java.lang.Long
+     */
+    public Long setrange(String key,long offset,String value){
+        return this.returnResult(this.jedis.setrange(key, offset, value));
+    }
+    /**
+     * 用 value 参数覆写给定 key 所储存的字符串值，从偏移量 offset 开始
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param key 键
+     * @param offset 偏移量
+     * @param value 值
+     * @return java.lang.Long
+     */
+    public Long setrange(byte[] key,long offset,byte[] value){
+        return this.returnResult(this.jedis.setrange(key, offset, value));
+    }
+    /**
+     * 返回 key 所储存的字符串值的长度
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param key 键
+     * @return java.lang.Long
+     */
+    public Long strlen(String key){
+        return this.returnResult(this.jedis.strlen(key));
+    }
+    /**
+     * 返回 key 所储存的字符串值的长度
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param key 键
+     * @return java.lang.Long
+     */
+    public Long strlen(byte[] key){
+        return this.returnResult(this.jedis.strlen(key));
+    }
+    /**
+     * 同时设置一个或多个 key-value 对
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param keysvalues 键值对，比如 "name","小米","age",20
+     * @return java.lang.String
+     */
+    public String mset(String... keysvalues){
+        return this.returnResult(this.jedis.mset(keysvalues));
+    }
+    /**
+     * 同时设置一个或多个 key-value 对
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param keysvalues 键值对，比如 "name","小米","age",20
+     * @return java.lang.String
+     */
+    public String mset(byte[]... keysvalues){
+        return this.returnResult(this.jedis.mset(keysvalues));
+    }
+    /**
+     * 同时设置一个或多个 key-value 对，当且仅当所有给定 key 都不存在
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param keysvalues 键值对，比如 "name","小米","age",20
+     * @return java.lang.Long
+     */
+    public Long msetnx(String... keysvalues){
+        return this.returnResult(this.jedis.msetnx(keysvalues));
+    }
+    /**
+     * 同时设置一个或多个 key-value 对，当且仅当所有给定 key 都不存在
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param keysvalues 键值对，比如 "name","小米","age",20
+     * @return java.lang.Long
+     */
+    public Long msetnx(byte[]... keysvalues){
+        return this.returnResult(this.jedis.msetnx(keysvalues));
+    }
+    /**
+     * 这个命令和 SETEX 命令相似，但它以毫秒为单位设置 key 的生存时间，而不是像 SETEX 命令那样，以秒为单位
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param key 键
+     * @param ttl 生存时间
+     * @param value 值
+     * @return java.lang.String
+     */
+    public String psetex(String key,long ttl,String value){
+        return this.returnResult(this.jedis.psetex(key, ttl, value));
+    }
+    /**
+     * 这个命令和 SETEX 命令相似，但它以毫秒为单位设置 key 的生存时间，而不是像 SETEX 命令那样，以秒为单位
+     *
+     * @author 阿导
+     * @time 2019/8/26 :00
+     * @param key 键
+     * @param ttl 生存时间
+     * @param value 值
+     * @return java.lang.String
+     */
+    public String psetex(byte[] key,long ttl,byte[] value){
+        return this.returnResult(this.jedis.psetex(key, ttl, value));
+    }
 }

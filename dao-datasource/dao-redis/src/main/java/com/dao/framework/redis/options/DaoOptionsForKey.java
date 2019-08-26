@@ -7,8 +7,8 @@ import java.util.Set;
 /**
  * redis 操作键
  *
- * @author 典羽
- * @CopyRight 三国
+ * @author 阿导
+ * @CopyRight 万物皆导
  * @Created 2019-08-23 16:42:00
  */
 public class DaoOptionsForKey extends AbstractDaoRedisOptions {
@@ -65,7 +65,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /**
      * 序列化给定 key ，并返回被序列化的值。
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @return byte[]
@@ -76,7 +76,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /** 
      * 序列化给定 key ，并返回被序列化的值。
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @return byte[]
@@ -162,7 +162,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /** 
      * EXPIREAT 的作用和 EXPIRE 类似，都用于为 key 设置过期时间。 不同在于 EXPIREAT 命令接受的时间参数是 UNIX 时间戳(unix timestamp)
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param ttl 过期世间
@@ -174,7 +174,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /*** 
      * EXPIREAT 的作用和 EXPIRE 类似，都用于为 key 设置过期时间。 不同在于 EXPIREAT 命令接受的时间参数是 UNIX 时间戳(unix timestamp)
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param ttl 过期世间
@@ -186,7 +186,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /**
      * 设置 key 的过期时间以毫秒计
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param ttl 过期世间
@@ -199,7 +199,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /**
      * 设置 key 的过期时间以毫秒计
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param ttl 过期世间
@@ -213,7 +213,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /**
      * 设置 key 过期时间的时间戳(unix timestamp) 以毫秒计
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param ttl 过期世间
@@ -225,7 +225,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /**
      * 设置 key 过期时间的时间戳(unix timestamp) 以毫秒计
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param ttl 过期世间
@@ -237,7 +237,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /**
      * 查找所有符合给定模式( pattern)的 key ,慎用，极大的消耗服务器的 cpu
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param pattern 表达式
      * @return java.util.Set<java.lang.String>
@@ -248,7 +248,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /**
      * 查找所有符合给定模式( pattern)的 key ,慎用，极大的消耗服务器的 cpu
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param pattern 表达式
      * @return java.util.Set<byte[]>
@@ -259,7 +259,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /**
      * 将当前数据库的 key 移动到给定的数据库 db 当中
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param database 数据库
@@ -271,7 +271,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /**
      * 将当前数据库的 key 移动到给定的数据库 db 当中
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @param database 数据库
@@ -283,7 +283,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /**
      * 移除 key 的过期时间，key 将持久保持
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @return java.lang.Long
@@ -294,7 +294,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /**
      * 移除 key 的过期时间，key 将持久保持
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @return java.lang.Long
@@ -305,7 +305,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /**
      * 以毫秒为单位返回 key 的剩余的过期时间
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @return java.lang.Long
@@ -316,7 +316,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /** 
      * 以毫秒为单位返回 key 的剩余的过期时间
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @return java.lang.Long
@@ -327,7 +327,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /** 
      * 以秒为单位，返回给定 key 的剩余生存时间(TTL, time to live)
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @return java.lang.Long
@@ -338,7 +338,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /** 
      * 以秒为单位，返回给定 key 的剩余生存时间(TTL, time to live)
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @return java.lang.Long
@@ -349,7 +349,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /** 
      * 从当前数据库中随机返回一个 key
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @return java.lang.String
      */
@@ -359,7 +359,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /**
      * 从当前数据库中随机返回一个 key
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @return java.lang.String
      */
@@ -369,7 +369,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /**
      * 修改 key 的名称，不推荐使用，防止数据丢失
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param oldKey 旧键
      * @param newKey 新键
@@ -381,7 +381,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /**
      * 修改 key 的名称，不推荐使用，防止数据丢失
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param oldKey 旧键
      * @param newKey 新键
@@ -393,7 +393,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /**
      * 仅当 newkey 不存在时，将 key 改名为 newkey
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param oldKey 旧键
      * @param newKey 新键
@@ -405,7 +405,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /**
      * 仅当 newkey 不存在时，将 key 改名为 newkey
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param oldKey 旧键
      * @param newKey 新键
@@ -417,7 +417,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /**
      * 返回 key 所储存的值的类型
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @return java.lang.String
@@ -428,7 +428,7 @@ public class DaoOptionsForKey extends AbstractDaoRedisOptions {
     /**
      * 返回 key 所储存的值的类型
      *
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/23 :00
      * @param key 键
      * @return java.lang.String
