@@ -35,12 +35,45 @@ public abstract class AbstractDaoRedisTemplate{
     @Autowired
     private DaoOptionsForList daoOptionsForList;
     /**
-     * redis 操作 set
+     * redis 操作集合
      */
     @Autowired
     private DaoOptionsForSet daoOptionsForSet;
-
-
+    /**
+     * redis 操作有序集合
+     */
+    @Autowired
+    private DaoOptionsForSortedSet daoOptionsForSortedSet;
+    /**
+     * redis 操作 HyperLogLog
+     */
+    @Autowired
+    private DaoOptionsForHyperLogLog daoOptionsForHyperLogLog;
+    /**
+     * redis 发布订阅功能
+     */
+    @Autowired
+    private DaoOptionsForPubSub daoOptionsForPubSub;
+    /**
+     * redis 事务
+     */
+    @Autowired
+    private DaoOptionsForTransactional daoOptionsForTransactional;
+    /**
+     * redis 操作脚本
+     */
+    @Autowired
+    private DaoOptionsForScript daoOptionsForScript;
+    /**
+     * redis 连接
+     */
+    @Autowired
+    private DaoOptionsForConnection daoOptionsForConnection;
+    /**
+     * redis 服务器
+     */
+    @Autowired
+    private DaoOptionsForServer daoOptionsForServer;
     /**
      * 操作字符串工具集
      *
@@ -48,7 +81,7 @@ public abstract class AbstractDaoRedisTemplate{
      * @author 阿导
      * @time 2019/8/22 :00
      */
-    public DaoOptionsForKey optionsForKey() throws Exception {
+    public DaoOptionsForKey key() throws Exception {
         //获取本类注解的值
         DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
         daoOptionsForKey.beforOptions(annotation, DaoConstantsUtils.BAR_ZERO);
@@ -64,7 +97,7 @@ public abstract class AbstractDaoRedisTemplate{
      * @param database db
      * @time 2019/8/22 :00
      */
-    public DaoOptionsForKey optionsForKey(int database) throws Exception {
+    public DaoOptionsForKey key(int database) throws Exception {
         //获取本类注解的值
         DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
         daoOptionsForKey.beforOptions(annotation,database);
@@ -78,7 +111,7 @@ public abstract class AbstractDaoRedisTemplate{
      * @author 阿导
      * @time 2019/8/22 :00
      */
-    public DaoOptionsForString optionsForString() throws Exception {
+    public DaoOptionsForString string() throws Exception {
         //获取本类注解的值
         DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
         daoOptionsForString.beforOptions(annotation, DaoConstantsUtils.BAR_ZERO);
@@ -94,7 +127,7 @@ public abstract class AbstractDaoRedisTemplate{
      * @param database db
      * @time 2019/8/22 :00
      */
-    public DaoOptionsForString optionsForString(int database) throws Exception {
+    public DaoOptionsForString string(int database) throws Exception {
         //获取本类注解的值
         DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
         daoOptionsForString.beforOptions(annotation,database);
@@ -109,7 +142,7 @@ public abstract class AbstractDaoRedisTemplate{
      * @author 阿导
      * @time 2019/8/22 :00
      */
-    public DaoOptionsForHash optionsForHash() throws Exception {
+    public DaoOptionsForHash hash() throws Exception {
         //获取本类注解的值
         DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
         daoOptionsForHash.beforOptions(annotation, DaoConstantsUtils.BAR_ZERO);
@@ -125,7 +158,7 @@ public abstract class AbstractDaoRedisTemplate{
      * @author 阿导
      * @time 2019/8/22 :00
      */
-    public DaoOptionsForHash optionsForHash(int database) throws Exception {
+    public DaoOptionsForHash hash(int database) throws Exception {
         //获取本类注解的值
         DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
         daoOptionsForHash.beforOptions(annotation,database);
@@ -139,7 +172,7 @@ public abstract class AbstractDaoRedisTemplate{
      * @author 阿导
      * @time 2019/8/22 :00
      */
-    public DaoOptionsForList optionsForList() throws Exception {
+    public DaoOptionsForList list() throws Exception {
         //获取本类注解的值
         DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
         daoOptionsForList.beforOptions(annotation, DaoConstantsUtils.BAR_ZERO);
@@ -155,7 +188,7 @@ public abstract class AbstractDaoRedisTemplate{
      * @author 阿导
      * @time 2019/8/22 :00
      */
-    public DaoOptionsForList optionsForList(int database) throws Exception {
+    public DaoOptionsForList list(int database) throws Exception {
         //获取本类注解的值
         DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
         daoOptionsForList.beforOptions(annotation,database);
@@ -169,7 +202,7 @@ public abstract class AbstractDaoRedisTemplate{
      * @author 阿导
      * @time 2019/8/22 :00
      */
-    public DaoOptionsForSet optionsForSet() throws Exception {
+    public DaoOptionsForSet set() throws Exception {
         //获取本类注解的值
         DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
         daoOptionsForSet.beforOptions(annotation, DaoConstantsUtils.BAR_ZERO);
@@ -185,10 +218,135 @@ public abstract class AbstractDaoRedisTemplate{
      * @param database db
      * @time 2019/8/22 :00
      */
-    public DaoOptionsForSet optionsForSet(int database) throws Exception {
+    public DaoOptionsForSet set(int database) throws Exception {
         //获取本类注解的值
         DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
         daoOptionsForSet.beforOptions(annotation,database);
         return daoOptionsForSet;
+    }
+    /**
+     * 操作列表工具集
+     *
+     * @return com.dao.framework.redis.options.DaoOptionsForSortedSet
+     * @author 阿导
+     * @time 2019/8/22 :00
+     */
+    public DaoOptionsForSortedSet sortedSet() throws Exception {
+        //获取本类注解的值
+        DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
+        daoOptionsForSortedSet.beforOptions(annotation, DaoConstantsUtils.BAR_ZERO);
+        return daoOptionsForSortedSet;
+    }
+
+
+    /**
+     * 操作列表工具集,可选取当前链接源的数据库
+     *
+     * @return com.dao.framework.redis.options.DaoOptionsForSortedSet
+     * @author 阿导
+     * @param database db
+     * @time 2019/8/22 :00
+     */
+    public DaoOptionsForSortedSet sortedSet(int database) throws Exception {
+        //获取本类注解的值
+        DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
+        daoOptionsForSortedSet.beforOptions(annotation,database);
+        return daoOptionsForSortedSet;
+    }
+
+    /**
+     * 操作 HyperLogLog 工具集
+     *
+     * @return com.dao.framework.redis.options.DaoOptionsForSortedSet
+     * @author 阿导
+     * @time 2019/8/22 :00
+     */
+    public DaoOptionsForHyperLogLog hyperLogLog() throws Exception {
+        //获取本类注解的值
+        DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
+        daoOptionsForHyperLogLog.beforOptions(annotation, DaoConstantsUtils.BAR_ZERO);
+        return daoOptionsForHyperLogLog;
+    }
+
+
+    /**
+     * 操作 HyperLogLog 工具集,可选取当前链接源的数据库
+     *
+     * @return com.dao.framework.redis.options.DaoOptionsForSortedSet
+     * @author 阿导
+     * @param database db
+     * @time 2019/8/22 :00
+     */
+    public DaoOptionsForHyperLogLog hyperLogLog(int database) throws Exception {
+        //获取本类注解的值
+        DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
+        daoOptionsForHyperLogLog.beforOptions(annotation,database);
+        return daoOptionsForHyperLogLog;
+    }
+
+    /**
+     * redis 发布订阅功能
+     *
+     * @author 阿导
+     * @time 2019/8/27 :00
+     * @return com.dao.framework.redis.options.DaoOptionsForPubSub
+     */
+    public DaoOptionsForPubSub pubSub() throws Exception {
+        //获取本类注解的值
+        DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
+        daoOptionsForPubSub.beforOptions(annotation,DaoConstantsUtils.BAR_ZERO);
+        return daoOptionsForPubSub;
+    }
+    /**
+     * redis 操作事务
+     *
+     * @author 阿导
+     * @time 2019/8/27 :00
+     * @return com.dao.framework.redis.options.DaoOptionsForTransactional
+     */
+    public DaoOptionsForTransactional transactional() throws Exception {
+        //获取本类注解的值
+        DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
+        daoOptionsForTransactional.beforOptions(annotation,DaoConstantsUtils.BAR_ZERO);
+        return daoOptionsForTransactional;
+    }
+    /**
+     * redis 操作脚本
+     *
+     * @author 阿导
+     * @time 2019/8/27 :00
+     * @return com.dao.framework.redis.options.DaoOptionsForScript
+     */
+    public DaoOptionsForScript script() throws Exception {
+        //获取本类注解的值
+        DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
+        daoOptionsForScript.beforOptions(annotation,DaoConstantsUtils.BAR_ZERO);
+        return daoOptionsForScript;
+    }
+    /**
+     * redis 操作连接
+     *
+     * @author 阿导
+     * @time 2019/8/27 :00
+     * @return com.dao.framework.redis.options.DaoOptionsForConnection
+     */
+    public DaoOptionsForConnection connection() throws Exception {
+        //获取本类注解的值
+        DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
+        daoOptionsForConnection.beforOptions(annotation,DaoConstantsUtils.BAR_ZERO);
+        return daoOptionsForConnection;
+    }
+    /**
+     * redis 操作服务器
+     *
+     * @author 阿导
+     * @time 2019/8/27 :00
+     * @return com.dao.framework.redis.options.DaoOptionsForServer
+     */
+    public DaoOptionsForServer server() throws Exception {
+        //获取本类注解的值
+        DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
+        daoOptionsForServer.beforOptions(annotation,DaoConstantsUtils.BAR_ZERO);
+        return daoOptionsForServer;
     }
 }

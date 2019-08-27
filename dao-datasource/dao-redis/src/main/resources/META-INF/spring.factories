@@ -4,4 +4,11 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.dao.framework
   com.dao.framework.redis.options.DaoOptionsForString,\
   com.dao.framework.redis.options.DaoOptionsForHash,\
   com.dao.framework.redis.options.DaoOptionsForList,\
-  com.dao.framework.redis.options.DaoOptionsForSet,
+  com.dao.framework.redis.options.DaoOptionsForSet,\
+  com.dao.framework.redis.options.DaoOptionsForSortedSet,\
+  com.dao.framework.redis.options.DaoOptionsForHyperLogLog,\
+  com.dao.framework.redis.options.DaoOptionsForPubSub,\
+  com.dao.framework.redis.options.DaoOptionsForTransactional,\
+  com.dao.framework.redis.options.DaoOptionsForScript,\
+  com.dao.framework.redis.options.DaoOptionsForConnection,\
+  com.dao.framework.redis.options.DaoOptionsForServer,

@@ -58,7 +58,7 @@ public abstract class AbstractDaoRedisOptions {
      * 返回结果
      *
      * @param rs 结果
-     * @return boolean
+     * @return T
      * @author 阿导
      * @time 2019/8/22 :00
      */
@@ -68,4 +68,15 @@ public abstract class AbstractDaoRedisOptions {
         // 返回结果
         return rs;
     }
+    /**
+     * 处理无返回值的操作
+     *
+     * @author 阿导
+     * @time 2019/8/27 :00
+     * @return void
+     */
+    protected void voidResult(){
+        afterOptions();
+    }
+
 }
