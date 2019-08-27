@@ -385,7 +385,7 @@ public class DaoOptionsForHash extends AbstractDaoRedisOptions {
      *
      * @param key        键
      * @param cursor     游标
-     * @param scanParams
+     * @param scanParams 过滤参数
      * @return redis.clients.jedis.ScanResult<java.util.Map.Entry < java.lang.String, java.lang.String>>
      * @author 阿导
      * @time 2019/8/23 :00
@@ -399,7 +399,7 @@ public class DaoOptionsForHash extends AbstractDaoRedisOptions {
      *
      * @param key        键
      * @param cursor     游标
-     * @param scanParams
+     * @param scanParams 过滤参数
      * @return redis.clients.jedis.ScanResult<java.util.Map.Entry < byte [ ], byte [ ]>>
      * @author 阿导
      * @time 2019/8/23 :00
