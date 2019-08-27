@@ -449,7 +449,7 @@ public class DaoOptionsForString extends AbstractDaoRedisOptions {
      *
      * @param key 键
      * @return java.lang.Long
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/27 :00
      */
     public Long incr(String key) {
@@ -461,7 +461,7 @@ public class DaoOptionsForString extends AbstractDaoRedisOptions {
      *
      * @param key 键
      * @return java.lang.Long
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/27 :00
      */
     public Long incr(byte[] key) {
@@ -474,7 +474,7 @@ public class DaoOptionsForString extends AbstractDaoRedisOptions {
      * @param key       键
      * @param increment 增量
      * @return java.lang.Long
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/27 :00
      */
     public Long incrBy(String key, long increment) {
@@ -487,7 +487,7 @@ public class DaoOptionsForString extends AbstractDaoRedisOptions {
      * @param key       键
      * @param increment 增量
      * @return java.lang.Long
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/27 :00
      */
     public Long incrBy(byte[] key, long increment) {
@@ -500,7 +500,7 @@ public class DaoOptionsForString extends AbstractDaoRedisOptions {
      * @param key       键
      * @param increment 增量
      * @return java.lang.Double
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/27 :00
      */
     public Double incrByFloat(String key, double increment) {
@@ -513,7 +513,7 @@ public class DaoOptionsForString extends AbstractDaoRedisOptions {
      * @param key       键
      * @param increment 增量
      * @return java.lang.Double
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/27 :00
      */
     public Double incrByFloat(byte[] key, double increment) {
@@ -525,7 +525,7 @@ public class DaoOptionsForString extends AbstractDaoRedisOptions {
      *
      * @param key 键
      * @return java.lang.Long
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/27 :00
      */
     public Long decr(String key) {
@@ -537,7 +537,7 @@ public class DaoOptionsForString extends AbstractDaoRedisOptions {
      *
      * @param key 键
      * @return java.lang.Long
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/27 :00
      */
     public Long decr(byte[] key) {
@@ -550,7 +550,7 @@ public class DaoOptionsForString extends AbstractDaoRedisOptions {
      * @param key       键
      * @param increment 减量
      * @return java.lang.Long
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/27 :00
      */
     public Long decrBy(String key, long increment) {
@@ -563,7 +563,7 @@ public class DaoOptionsForString extends AbstractDaoRedisOptions {
      * @param key       键
      * @param increment 减量
      * @return java.lang.Long
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/27 :00
      */
     public Long decrBy(byte[] key, long increment) {
@@ -576,7 +576,7 @@ public class DaoOptionsForString extends AbstractDaoRedisOptions {
      * @param key   键
      * @param value 值
      * @return java.lang.Long
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/27 :00
      */
     public Long append(String key, String value) {
@@ -589,7 +589,7 @@ public class DaoOptionsForString extends AbstractDaoRedisOptions {
      * @param key   键
      * @param value 值
      * @return java.lang.Long
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/27 :00
      */
     public Long append(byte[] key, byte[] value) {
