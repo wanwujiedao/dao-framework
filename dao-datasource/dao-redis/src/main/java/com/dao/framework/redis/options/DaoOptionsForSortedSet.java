@@ -382,9 +382,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 通过字典区间返回有序集合的成员
      *
-     * @param key
-     * @param start
-     * @param end
+     * @param key   键
+     * @param start 开始位置
+     * @param end   结束位置
      * @return java.util.Set<java.lang.String>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -396,9 +396,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 通过字典区间返回有序集合的成员
      *
-     * @param key
-     * @param start
-     * @param end
+     * @param key   键
+     * @param start 开始位置
+     * @param end   结束位置
      * @return java.util.Set<byte [ ]>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -410,11 +410,11 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 通过字典区间返回有序集合的成员
      *
-     * @param key
-     * @param start
-     * @param end
-     * @param offset
-     * @param count
+     * @param key    键
+     * @param start  开始位置
+     * @param end    结束位置
+     * @param offset 偏移量
+     * @param count  数量
      * @return java.util.Set<java.lang.String>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -426,11 +426,11 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 通过字典区间返回有序集合的成员
      *
-     * @param key
-     * @param start
-     * @param end
-     * @param offset
-     * @param count
+     * @param key    键
+     * @param start  开始位置
+     * @param end    结束位置
+     * @param offset 偏移量
+     * @param count  数量
      * @return java.util.Set<byte [ ]>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -442,9 +442,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 通过分数返回有序集合指定区间内的成员
      *
-     * @param key
-     * @param min
-     * @param max
+     * @param key 键
+     * @param min 范围起始位置
+     * @param max 范围结束位置
      * @return java.util.Set<java.lang.String>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -456,9 +456,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 通过分数返回有序集合指定区间内的成员
      *
-     * @param key
-     * @param min
-     * @param max
+     * @param key 键
+     * @param min 范围起始位置
+     * @param max 范围结束位置
      * @return java.util.Set<byte [ ]>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -470,9 +470,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 通过分数返回有序集合指定区间内的成员
      *
-     * @param key
-     * @param min
-     * @param max
+     * @param key 键
+     * @param min 范围起始位置
+     * @param max 范围结束位置
      * @return java.util.Set<java.lang.String>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -484,9 +484,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 通过分数返回有序集合指定区间内的成员
      *
-     * @param key
-     * @param min
-     * @param max
+     * @param key 键
+     * @param min 范围起始位置
+     * @param max 范围结束位置
      * @return java.util.Set<byte [ ]>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -498,11 +498,11 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 通过分数返回有序集合指定区间内的成员
      *
-     * @param key
-     * @param min
-     * @param max
-     * @param offset
-     * @param count
+     * @param key    键
+     * @param min    范围起始位置
+     * @param max    范围结束位置
+     * @param offset 偏移量
+     * @param count  数量
      * @return java.util.Set<java.lang.String>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -514,11 +514,11 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 通过分数返回有序集合指定区间内的成员
      *
-     * @param key
-     * @param min
-     * @param max
-     * @param offset
-     * @param count
+     * @param key    键
+     * @param min    范围起始位置
+     * @param max    范围结束位置
+     * @param offset 偏移量
+     * @param count  数量
      * @return java.util.Set<byte [ ]>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -530,11 +530,11 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 通过分数返回有序集合指定区间内的成员
      *
-     * @param key
-     * @param min
-     * @param max
-     * @param offset
-     * @param count
+     * @param key    键
+     * @param min    范围起始位置
+     * @param max    范围结束位置
+     * @param offset 偏移量
+     * @param count  数量
      * @return java.util.Set<java.lang.String>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -546,11 +546,11 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 通过分数返回有序集合指定区间内的成员
      *
-     * @param key
-     * @param min
-     * @param max
-     * @param offset
-     * @param count
+     * @param key    键
+     * @param min    范围起始位置
+     * @param max    范围结束位置
+     * @param offset 偏移量
+     * @param count  数量
      * @return java.util.Set<byte [ ]>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -562,9 +562,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 通过分数返回有序集合指定区间内的成员
      *
-     * @param key
-     * @param min
-     * @param max
+     * @param key 键
+     * @param min 范围起始位置
+     * @param max 范围结束位置
      * @return java.util.Set<redis.clients.jedis.Tuple>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -576,9 +576,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 通过分数返回有序集合指定区间内的成员
      *
-     * @param key
-     * @param min
-     * @param max
+     * @param key 键
+     * @param min 范围起始位置
+     * @param max 范围结束位置
      * @return java.util.Set<redis.clients.jedis.Tuple>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -590,9 +590,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 通过分数返回有序集合指定区间内的成员
      *
-     * @param key
-     * @param min
-     * @param max
+     * @param key 键
+     * @param min 范围起始位置
+     * @param max 范围结束位置
      * @return java.util.Set<redis.clients.jedis.Tuple>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -604,9 +604,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 通过分数返回有序集合指定区间内的成员
      *
-     * @param key
-     * @param min
-     * @param max
+     * @param key 键
+     * @param min 范围起始位置
+     * @param max 范围结束位置
      * @return java.util.Set<redis.clients.jedis.Tuple>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -618,11 +618,11 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 通过分数返回有序集合指定区间内的成员
      *
-     * @param key
-     * @param min
-     * @param max
-     * @param offset
-     * @param count
+     * @param key    键
+     * @param min    范围起始位置
+     * @param max    范围结束位置
+     * @param offset 偏移量
+     * @param count  数量
      * @return java.util.Set<redis.clients.jedis.Tuple>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -634,11 +634,11 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 通过分数返回有序集合指定区间内的成员
      *
-     * @param key
-     * @param min
-     * @param max
-     * @param offset
-     * @param count
+     * @param key    键
+     * @param min    范围起始位置
+     * @param max    范围结束位置
+     * @param offset 偏移量
+     * @param count  数量
      * @return java.util.Set<redis.clients.jedis.Tuple>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -650,11 +650,11 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 通过分数返回有序集合指定区间内的成员
      *
-     * @param key
-     * @param min
-     * @param max
-     * @param offset
-     * @param count
+     * @param key    键
+     * @param min    范围起始位置
+     * @param max    范围结束位置
+     * @param offset 偏移量
+     * @param count  数量
      * @return java.util.Set<redis.clients.jedis.Tuple>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -666,11 +666,11 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 通过分数返回有序集合指定区间内的成员
      *
-     * @param key
-     * @param min
-     * @param max
-     * @param offset
-     * @param count
+     * @param key    键
+     * @param min    范围起始位置
+     * @param max    范围结束位置
+     * @param offset 偏移量
+     * @param count  数量
      * @return java.util.Set<redis.clients.jedis.Tuple>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -682,8 +682,8 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集合中指定成员的索引
      *
-     * @param key
-     * @param member
+     * @param key    键
+     * @param member 成员
      * @return java.lang.Long
      * @author 阿导
      * @time 2019/8/28 :00
@@ -695,8 +695,8 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集合中指定成员的索引
      *
-     * @param key
-     * @param member
+     * @param key    键
+     * @param member 成员集合
      * @return java.lang.Long
      * @author 阿导
      * @time 2019/8/28 :00
@@ -708,8 +708,8 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 移除有序集合中的一个或多个成员
      *
-     * @param key
-     * @param members
+     * @param key     键
+     * @param members 成员集合
      * @return java.lang.Long
      * @author 阿导
      * @time 2019/8/28 :00
@@ -721,8 +721,8 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 移除有序集合中的一个或多个成员
      *
-     * @param key
-     * @param members
+     * @param key     键
+     * @param members 成员集合
      * @return java.lang.Long
      * @author 阿导
      * @time 2019/8/28 :00
@@ -734,9 +734,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 移除有序集合中给定的字典区间的所有成员
      *
-     * @param key
-     * @param min
-     * @param max
+     * @param key 键
+     * @param min 范围起始位置
+     * @param max 范围结束位置
      * @return java.lang.Long
      * @author 阿导
      * @time 2019/8/28 :00
@@ -748,9 +748,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 移除有序集合中给定的字典区间的所有成员
      *
-     * @param key
-     * @param min
-     * @param max
+     * @param key 键
+     * @param min 范围起始位置
+     * @param max 范围结束位置
      * @return java.lang.Long
      * @author 阿导
      * @time 2019/8/28 :00
@@ -762,9 +762,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 移除有序集合中给定的排名区间的所有成员
      *
-     * @param key
-     * @param start
-     * @param end
+     * @param key   键
+     * @param start 开始位置
+     * @param end   结束位置
      * @return java.lang.Long
      * @author 阿导
      * @time 2019/8/28 :00
@@ -776,9 +776,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 移除有序集合中给定的排名区间的所有成员
      *
-     * @param key
-     * @param start
-     * @param end
+     * @param key   键
+     * @param start 开始位置
+     * @param end   结束位置
      * @return java.lang.Long
      * @author 阿导
      * @time 2019/8/28 :00
@@ -790,9 +790,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 移除有序集合中给定的分数区间的所有成员
      *
-     * @param key
-     * @param min
-     * @param max
+     * @param key 键
+     * @param min 范围起始位置
+     * @param max 范围结束位置
      * @return java.lang.Long
      * @author 阿导
      * @time 2019/8/28 :00
@@ -804,9 +804,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 移除有序集合中给定的分数区间的所有成员
      *
-     * @param key
-     * @param min
-     * @param max
+     * @param key 键
+     * @param min 范围起始位置
+     * @param max 范围结束位置
      * @return java.lang.Long
      * @author 阿导
      * @time 2019/8/28 :00
@@ -818,9 +818,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 移除有序集合中给定的分数区间的所有成员
      *
-     * @param key
-     * @param min
-     * @param max
+     * @param key 键
+     * @param min 范围起始位置
+     * @param max 范围结束位置
      * @return java.lang.Long
      * @author 阿导
      * @time 2019/8/28 :00
@@ -832,9 +832,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 移除有序集合中给定的分数区间的所有成员
      *
-     * @param key
-     * @param min
-     * @param max
+     * @param key 键
+     * @param min 范围起始位置
+     * @param max 范围结束位置
      * @return java.lang.Long
      * @author 阿导
      * @time 2019/8/28 :00
@@ -846,9 +846,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集中指定区间内的成员，通过索引，分数从高到底
      *
-     * @param key
-     * @param start
-     * @param end
+     * @param key   键
+     * @param start 开始位置
+     * @param end   结束位置
      * @return java.util.Set<java.lang.String>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -860,9 +860,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集中指定区间内的成员，通过索引，分数从高到底
      *
-     * @param key
-     * @param start
-     * @param end
+     * @param key   键
+     * @param start 开始位置
+     * @param end   结束位置
      * @return java.util.Set<byte [ ]>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -874,9 +874,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集中指定区间内的成员，通过索引，分数从高到底
      *
-     * @param key
-     * @param start
-     * @param end
+     * @param key   键
+     * @param start 开始位置
+     * @param end   结束位置
      * @return java.util.Set<redis.clients.jedis.Tuple>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -888,9 +888,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集中指定区间内的成员，通过索引，分数从高到底
      *
-     * @param key
-     * @param start
-     * @param end
+     * @param key   键
+     * @param start 开始位置
+     * @param end   结束位置
      * @return java.util.Set<redis.clients.jedis.Tuple>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -902,9 +902,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集中指定分数区间内的成员，分数从高到低排序
      *
-     * @param key
-     * @param max
-     * @param min
+     * @param key 键
+     * @param max 范围结束位置
+     * @param min 范围起始位置
      * @return java.util.Set<java.lang.String>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -916,9 +916,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集中指定分数区间内的成员，分数从高到低排序
      *
-     * @param key
-     * @param max
-     * @param min
+     * @param key 键
+     * @param max 范围结束位置
+     * @param min 范围起始位置
      * @return java.util.Set<byte [ ]>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -930,11 +930,11 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集中指定分数区间内的成员，分数从高到低排序
      *
-     * @param key
-     * @param max
-     * @param min
-     * @param offset
-     * @param count
+     * @param key    键
+     * @param max    范围结束位置
+     * @param min    范围起始位置
+     * @param offset 偏移量
+     * @param count  数量
      * @return java.util.Set<java.lang.String>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -946,11 +946,11 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集中指定分数区间内的成员，分数从高到低排序
      *
-     * @param key
-     * @param max
-     * @param min
-     * @param offset
-     * @param count
+     * @param key    键
+     * @param max    范围结束位置
+     * @param min    范围起始位置
+     * @param offset 偏移量
+     * @param count  数量
      * @return java.util.Set<byte [ ]>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -962,9 +962,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集中指定分数区间内的成员，分数从高到低排序
      *
-     * @param key
-     * @param max
-     * @param min
+     * @param key 键
+     * @param max 范围结束位置
+     * @param min 范围起始位置
      * @return java.util.Set<java.lang.String>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -976,9 +976,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集中指定分数区间内的成员，分数从高到低排序
      *
-     * @param key
-     * @param max
-     * @param min
+     * @param key 键
+     * @param max 范围结束位置
+     * @param min 范围起始位置
      * @return java.util.Set<byte [ ]>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -990,11 +990,11 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集中指定分数区间内的成员，分数从高到低排序
      *
-     * @param key
-     * @param max
-     * @param min
-     * @param offset
-     * @param count
+     * @param key    键
+     * @param max    范围结束位置
+     * @param min    范围起始位置
+     * @param offset 偏移量
+     * @param count  数量
      * @return java.util.Set<java.lang.String>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -1006,11 +1006,11 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集中指定分数区间内的成员，分数从高到低排序
      *
-     * @param key
-     * @param max
-     * @param min
-     * @param offset
-     * @param count
+     * @param key    键
+     * @param max    范围结束位置
+     * @param min    范围起始位置
+     * @param offset 偏移量
+     * @param count  数量
      * @return java.util.Set<byte [ ]>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -1022,9 +1022,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集中指定分数区间内的成员，分数从高到低排序
      *
-     * @param key
-     * @param max
-     * @param min
+     * @param key 键
+     * @param max 范围结束位置
+     * @param min 范围起始位置
      * @return java.util.Set<redis.clients.jedis.Tuple>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -1036,9 +1036,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集中指定分数区间内的成员，分数从高到低排序
      *
-     * @param key
-     * @param max
-     * @param min
+     * @param key 键
+     * @param max 范围结束位置
+     * @param min 范围起始位置
      * @return java.util.Set<redis.clients.jedis.Tuple>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -1050,11 +1050,11 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集中指定分数区间内的成员，分数从高到低排序
      *
-     * @param key
-     * @param max
-     * @param min
-     * @param offset
-     * @param count
+     * @param key    键
+     * @param max    范围结束位置
+     * @param min    范围起始位置
+     * @param offset 偏移量
+     * @param count  数量
      * @return java.util.Set<redis.clients.jedis.Tuple>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -1066,11 +1066,11 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集中指定分数区间内的成员，分数从高到低排序
      *
-     * @param key
-     * @param max
-     * @param min
-     * @param offset
-     * @param count
+     * @param key    键
+     * @param max    范围结束位置
+     * @param min    范围起始位置
+     * @param offset 偏移量
+     * @param count  数量
      * @return java.util.Set<redis.clients.jedis.Tuple>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -1082,9 +1082,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集中指定分数区间内的成员，分数从高到低排序
      *
-     * @param key
-     * @param max
-     * @param min
+     * @param key 键
+     * @param max 范围结束位置
+     * @param min 范围起始位置
      * @return java.util.Set<redis.clients.jedis.Tuple>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -1096,9 +1096,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集中指定分数区间内的成员，分数从高到低排序
      *
-     * @param key
-     * @param max
-     * @param min
+     * @param key 键
+     * @param max 范围结束位置
+     * @param min 范围起始位置
      * @return java.util.Set<redis.clients.jedis.Tuple>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -1110,11 +1110,11 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集中指定分数区间内的成员，分数从高到低排序
      *
-     * @param key
-     * @param max
-     * @param min
-     * @param offset
-     * @param count
+     * @param key    键
+     * @param max    范围结束位置
+     * @param min    范围起始位置
+     * @param offset 偏移量
+     * @param count  数量
      * @return java.util.Set<redis.clients.jedis.Tuple>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -1126,11 +1126,11 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集中指定分数区间内的成员，分数从高到低排序
      *
-     * @param key
-     * @param max
-     * @param min
-     * @param offset
-     * @param count
+     * @param key    键
+     * @param max    范围结束位置
+     * @param min    范围起始位置
+     * @param offset 偏移量
+     * @param count  数量
      * @return java.util.Set<redis.clients.jedis.Tuple>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -1140,9 +1140,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     }
 
     /**
-     * @param key
-     * @param max
-     * @param min
+     * @param key 键
+     * @param max 范围结束位置
+     * @param min 范围起始位置
      * @return java.util.Set<java.lang.String>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -1152,9 +1152,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     }
 
     /**
-     * @param key
-     * @param max
-     * @param min
+     * @param key 键
+     * @param max 范围结束位置
+     * @param min 范围起始位置
      * @return java.util.Set<byte [ ]>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -1164,11 +1164,11 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     }
 
     /**
-     * @param key
-     * @param max
-     * @param min
-     * @param offset
-     * @param count
+     * @param key    键
+     * @param max    范围结束位置
+     * @param min    范围起始位置
+     * @param offset 偏移量
+     * @param count  数量
      * @return java.util.Set<java.lang.String>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -1178,11 +1178,11 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     }
 
     /**
-     * @param key
-     * @param max
-     * @param min
-     * @param offset
-     * @param count
+     * @param key    键
+     * @param max    范围结束位置
+     * @param min    范围起始位置
+     * @param offset 偏移量
+     * @param count  数量
      * @return java.util.Set<byte [ ]>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -1194,8 +1194,8 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集合中指定成员的排名，有序集成员按分数值递减(从大到小)排序
      *
-     * @param key
-     * @param member
+     * @param key    键
+     * @param member 成员
      * @return java.lang.Long
      * @author 阿导
      * @time 2019/8/28 :00
@@ -1207,8 +1207,8 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集合中指定成员的排名，有序集成员按分数值递减(从大到小)排序
      *
-     * @param key
-     * @param member
+     * @param key    键
+     * @param member 成员
      * @return java.lang.Long
      * @author 阿导
      * @time 2019/8/28 :00
@@ -1220,8 +1220,8 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集中，成员的分数值
      *
-     * @param key
-     * @param member
+     * @param key    键
+     * @param member 成员
      * @return java.lang.Double
      * @author 典羽
      * @time 2019/8/28 :00
@@ -1233,8 +1233,8 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 返回有序集中，成员的分数值
      *
-     * @param key
-     * @param member
+     * @param key    键
+     * @param member 成员
      * @return java.lang.Double
      * @author 典羽
      * @time 2019/8/28 :00
@@ -1246,8 +1246,8 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 计算给定的一个或多个有序集的并集，并存储在新的 key 中
      *
-     * @param destination
-     * @param sets
+     * @param destination 目标
+     * @param sets        集合
      * @return java.lang.Long
      * @author 阿导
      * @time 2019/8/28 :00
@@ -1259,8 +1259,8 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 计算给定的一个或多个有序集的并集，并存储在新的 key 中
      *
-     * @param destination
-     * @param sets
+     * @param destination 目标
+     * @param sets        集合
      * @return java.lang.Long
      * @author 阿导
      * @time 2019/8/28 :00
@@ -1272,9 +1272,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 计算给定的一个或多个有序集的并集，并存储在新的 key 中
      *
-     * @param destination
-     * @param zParams
-     * @param sets
+     * @param destination 目标
+     * @param zParams     过滤参数
+     * @param sets        集合
      * @return java.lang.Long
      * @author 阿导
      * @time 2019/8/28 :00
@@ -1286,9 +1286,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 计算给定的一个或多个有序集的并集，并存储在新的 key 中
      *
-     * @param destination
-     * @param zParams
-     * @param sets
+     * @param destination 目标
+     * @param zParams     过滤参数
+     * @param sets        集合
      * @return java.lang.Long
      * @author 阿导
      * @time 2019/8/28 :00
@@ -1300,8 +1300,8 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 迭代有序集合中的元素（包括元素成员和元素分值）
      *
-     * @param key
-     * @param cursor
+     * @param key    键
+     * @param cursor 游标
      * @return redis.clients.jedis.ScanResult<redis.clients.jedis.Tuple>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -1313,8 +1313,8 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 迭代有序集合中的元素（包括元素成员和元素分值）
      *
-     * @param key
-     * @param cursor
+     * @param key    键
+     * @param cursor 游标
      * @return redis.clients.jedis.ScanResult<redis.clients.jedis.Tuple>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -1326,9 +1326,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 迭代有序集合中的元素（包括元素成员和元素分值）
      *
-     * @param key
-     * @param cursor
-     * @param scanParams
+     * @param key        键
+     * @param cursor     游标
+     * @param scanParams 过滤参数
      * @return redis.clients.jedis.ScanResult<redis.clients.jedis.Tuple>
      * @author 阿导
      * @time 2019/8/28 :00
@@ -1340,9 +1340,9 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
     /**
      * 迭代有序集合中的元素（包括元素成员和元素分值）
      *
-     * @param key
-     * @param cursor
-     * @param scanParams
+     * @param key        键
+     * @param cursor     游标
+     * @param scanParams 过滤参数
      * @return redis.clients.jedis.ScanResult<redis.clients.jedis.Tuple>
      * @author 阿导
      * @time 2019/8/28 :00
