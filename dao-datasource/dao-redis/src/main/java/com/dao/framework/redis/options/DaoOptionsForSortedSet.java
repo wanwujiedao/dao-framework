@@ -1223,7 +1223,7 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
      * @param key    键
      * @param member 成员
      * @return java.lang.Double
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/28 :00
      */
     public Double zscore(String key, String member) {
@@ -1236,7 +1236,7 @@ public class DaoOptionsForSortedSet extends AbstractDaoRedisOptions {
      * @param key    键
      * @param member 成员
      * @return java.lang.Double
-     * @author 典羽
+     * @author 阿导
      * @time 2019/8/28 :00
      */
     public Double zscore(byte[] key, byte[] member) {
