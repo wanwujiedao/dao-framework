@@ -75,6 +75,11 @@ public abstract class AbstractDaoRedisTemplate{
     @Autowired
     private DaoOptionsForServer daoOptionsForServer;
     /**
+     * redis 管道技术
+     */
+    @Autowired
+    private DaoOptionsForPipeline daoOptionsForPipeline;
+    /**
      * 操作字符串工具集
      *
      * @return com.dao.framework.redis.options.OptionsForString
@@ -348,5 +353,18 @@ public abstract class AbstractDaoRedisTemplate{
         DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
         daoOptionsForServer.beforOptions(annotation,DaoConstantsUtils.BAR_ZERO);
         return daoOptionsForServer;
+    }
+    /**
+     * redis 通道技术
+     *
+     * @author 阿导
+     * @time 2019/8/29 :00
+     * @return com.dao.framework.redis.options.DaoOptionsForPipeline
+     */
+    public DaoOptionsForPipeline pipeline() throws Exception {
+        //获取本类注解的值
+        DaoRedisSelect annotation =this.getClass().getAnnotation(DaoRedisSelect.class);
+        daoOptionsForPipeline.beforOptions(annotation,DaoConstantsUtils.BAR_ZERO);
+        return daoOptionsForPipeline;
     }
 }
