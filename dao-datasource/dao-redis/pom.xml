@@ -12,11 +12,15 @@
     <artifactId>dao-redis</artifactId>
     <description>redis 数据源以及连接配置</description>
 
+    <properties>
+        <jedis-version>2.9.0</jedis-version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
-            <version>2.9.0</version>
+            <version>${jedis-version}</version>
         </dependency>
     </dependencies>
 </project>

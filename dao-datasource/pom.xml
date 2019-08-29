@@ -13,12 +13,10 @@
     <description>数据源</description>
     <packaging>pom</packaging>
     <modules>
-        <module>dao-mysql</module>
-        <module>dao-oracle</module>
-        <module>dao-sqlserver</module>
         <module>dao-redis</module>
         <module>dao-mongodb</module>
         <module>dao-hbase</module>
+        <module>dao-druid</module>
     </modules>
 
 

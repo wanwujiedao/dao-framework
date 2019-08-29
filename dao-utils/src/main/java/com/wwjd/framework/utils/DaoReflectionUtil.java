@@ -12,7 +12,7 @@ import java.lang.reflect.*;
  * 提供访问私有变量,获取泛型类型Class, 提取集合中元素的属性, 转换字符串到对象等Util函数.
  *
  * @author 阿导
- * @CopyRight 杭州弧途科技有限公司(青团社)
+ * @CopyRight 万物皆导
  * @created 2018/5/10 19:48
  * @Modified_By 阿导 2018/5/10 19:48
  */
@@ -29,7 +29,7 @@ public class DaoReflectionUtil {
      * @return
      * @author 阿导
      * @time 2018/5/10 19:48
-     * @CopyRight 杭州弧途科技有限公司（青团社）
+     * @CopyRight 万物皆导
      * @Param obj 实体类
      * @Param propertyName 属性名称
      */
@@ -44,7 +44,7 @@ public class DaoReflectionUtil {
      * @return
      * @author 阿导
      * @time 2018/5/10 19:49
-     * @CopyRight 杭州弧途科技有限公司（青团社）
+     * @CopyRight 万物皆导
      * @Param obj 实体类
      * @Param propertyName 属性名称
      * @Param value 值
@@ -59,7 +59,7 @@ public class DaoReflectionUtil {
      * @return
      * @author 阿导
      * @time 2018/5/10 19:50
-     * @CopyRight 杭州弧途科技有限公司（青团社）
+     * @CopyRight 万物皆导
      * @Param obj 实体类名称
      * @Param propertyName 属性名称
      * @Param value 值
@@ -97,7 +97,7 @@ public class DaoReflectionUtil {
      * @return
      * @author 阿导
      * @time 2018/5/10 19:52
-     * @CopyRight 杭州弧途科技有限公司（青团社）
+     * @CopyRight 万物皆导
      * @Param obj 实体类
      * @Param fieldName 属性名称
      */
@@ -123,7 +123,7 @@ public class DaoReflectionUtil {
      * @return
      * @author 阿导
      * @time 2018/5/10 19:53
-     * @CopyRight 杭州弧途科技有限公司（青团社）
+     * @CopyRight 万物皆导
      * @Param obj 实体类
      * @Param fieldName 属性名称
      * @Param value 值
@@ -150,7 +150,7 @@ public class DaoReflectionUtil {
      * @return
      * @author 阿导
      * @time 2018/5/10 20:01
-     * @CopyRight 杭州弧途科技有限公司（青团社）
+     * @CopyRight 万物皆导
      * @Param obj
      * @Param fieldName
      */
@@ -176,7 +176,7 @@ public class DaoReflectionUtil {
      * @return
      * @author 阿导
      * @time 2018/5/10 20:02
-     * @CopyRight 杭州弧途科技有限公司（青团社）
+     * @CopyRight 万物皆导
      * @Param obj 实体类
      * @Param methodName 方法名
      * @Param parameterTypes 参数类型
@@ -205,7 +205,7 @@ public class DaoReflectionUtil {
      * @return
      * @author 阿导
      * @time 2018/5/10 20:02
-     * @CopyRight 杭州弧途科技有限公司（青团社）
+     * @CopyRight 万物皆导
      * @Param obj 实体类
      * @Param methodName 方法名称
      * @Param parameterTypes 参数类型
@@ -237,7 +237,7 @@ public class DaoReflectionUtil {
      * @return
      * @author 阿导
      * @time 2018/5/10 19:59
-     * @CopyRight 杭州弧途科技有限公司（青团社）
+     * @CopyRight 万物皆导
      * @Param clazz 类
      */
     @SuppressWarnings({"unchecked", "rawtypes"})
@@ -255,7 +255,7 @@ public class DaoReflectionUtil {
      * @return
      * @author 阿导
      * @time 2018/5/10 19:54
-     * @CopyRight 杭州弧途科技有限公司（青团社）
+     * @CopyRight 万物皆导
      * @Param clazz 类
      * @Param index 泛型索引，从 0 开始
      */
@@ -290,7 +290,7 @@ public class DaoReflectionUtil {
      * @return
      * @author 阿导
      * @time 2018/5/10 19:54
-     * @CopyRight 杭州弧途科技有限公司（青团社）
+     * @CopyRight 万物皆导
      * @Param e
      */
     public static RuntimeException convertReflectionExceptionToUnchecked(Exception e) {
