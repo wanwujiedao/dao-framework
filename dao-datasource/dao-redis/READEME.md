@@ -85,7 +85,7 @@ private  AbstractDaoRedisTemplate test2RedisTemplate;
 
 - 启用该插件
 
-在启动类上，添加注解 @DaoRedisSelect
+在启动类上，添加注解 @EnableDaoRedis
 
 ### 其它补充
 
