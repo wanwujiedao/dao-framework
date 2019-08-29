@@ -49,8 +49,8 @@ public abstract class AbstractDaoRedisOptions {
      * @time 2019/8/22 :00
      */
     private void afterOptions() {
-        if (jedis != null) {
-            jedis.close();
+        if (this.jedis != null) {
+            this.jedis.close();
         }
     }
 

@@ -11,4 +11,4 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.dao.framework
   com.dao.framework.redis.options.DaoOptionsForTransactional,\
   com.dao.framework.redis.options.DaoOptionsForScript,\
   com.dao.framework.redis.options.DaoOptionsForConnection,\
-  com.dao.framework.redis.options.DaoOptionsForServer,
+  com.dao.framework.redis.options.DaoOptionsForServer

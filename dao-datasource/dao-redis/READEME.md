@@ -57,6 +57,20 @@ import com.dao.framework.redis.abstracts.AbstractDaoRedisTemplate;
 public class Test2RedisTemplate implements AbstractDaoRedisTemplate{}
 
 
+/**
+ * 引入默认连接源
+ *
+ */
+@Autowired
+private  AbstractDaoRedisTemplate daoRedisTemplate;
+
+/**
+ * 引入 test_2 连接源
+ *
+ */
+@Autowired
+private  AbstractDaoRedisTemplate test2RedisTemplate;
+
 ```
 
 - 启用该插件

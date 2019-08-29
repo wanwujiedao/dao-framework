@@ -76,4 +76,15 @@ public class DaoOptionsForConnection  extends AbstractDaoRedisOptions {
     public String select(int database){
         return this.returnResult(this.jedis.select(database));
     }
+
+    /**
+     * 关闭连接
+     *
+     * @author 阿导
+     * @time 2019/8/29 :00
+     * @return void
+     */
+    public void close(){
+      voidResult();
+    }
 }
