@@ -85,6 +85,6 @@ public class DaoOptionsForConnection  extends AbstractDaoRedisOptions {
      * @return void
      */
     public void close(){
-      voidResult();
+      this.voidResult();
     }
 }
