@@ -4,8 +4,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 
+import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * redis 属性注入类,暂时不提供 ssl 连接方式
@@ -18,7 +18,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @ConfigurationProperties(prefix = "dao.redis")
 public class DaoRedisProperties {
 
-    private Map<String,Config> config = new ConcurrentHashMap<>();
+    private Map<String,Config> config = new LinkedHashMap<>();
 
     private String host;
     private int port = 6379;
