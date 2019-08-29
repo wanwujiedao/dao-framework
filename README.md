@@ -32,7 +32,7 @@
     
 - 常用非关系型数据库
 
-    - redis
+    - [redis](./dao-datasource/dao-redis/READEME.md)
     
     - MongoDB
     
