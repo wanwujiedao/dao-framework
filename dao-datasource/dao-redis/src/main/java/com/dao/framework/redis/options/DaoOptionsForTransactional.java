@@ -32,7 +32,7 @@ public class DaoOptionsForTransactional extends AbstractDaoRedisOptions {
         boolean rs = false;
         //开启事务
         LOGGER.warn("开启 redis 事务");
-        Transaction multi = jedis.multi();
+        Transaction multi = this.jedis.multi();
         try {
             daoTransactional.doTrnsactionalCore(multi);
             // 执行
