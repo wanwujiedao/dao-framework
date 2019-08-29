@@ -4,22 +4,32 @@
 
 dao-redis 是阿导独立封装的 redis 操作集合，主要依赖于 spring 框架，以最便捷的方式对 redis 进行操作
 
-## 主要操作数据类型
+## 主要操作数据类型：以默认连接器进行示例
 
-### 字符串
+- `键`：daoRedisTemplate.key();
 
-### 哈希
+- `字符串`：daoRedisTemplate.string();
 
-### 列表
+- `哈希`：daoRedisTemplate.hash();
 
-### 集合
+- `列表`：daoRedisTemplate.list();
 
-### HyperLogLog
+- `集合`：daoRedisTemplate.set();
 
+- `有序集合`：daoRedisTemplate.sortedSet();
 
-## 扩展
+- `HyperLogLog`：daoRedisTemplate.hyperLogLog();
 
-### 发布订阅
+- `发布订阅`：daoRedisTemplate.pubSub();
+
+- `事务`：daoRedisTemplate.transactional();
+
+- `脚本`：daoRedisTemplate.script();
+
+- `连接`：daoRedisTemplate.connection();
+
+- `服务器`：daoRedisTemplate.server();
+        
 
 ## 使用说明
 
