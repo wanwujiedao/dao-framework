@@ -4,7 +4,7 @@
 
 dao-redis 是阿导独立封装的 redis 操作集合，主要依赖于 spring 框架，以最便捷的方式对 redis 进行操作
 
-## 主要操作数据类型：以默认连接器进行示例
+## 主要操作：以默认连接器进行示例
 
 - `键`：daoRedisTemplate.key();
 
@@ -30,6 +30,7 @@ dao-redis 是阿导独立封装的 redis 操作集合，主要依赖于 spring �
 
 - `服务器`：daoRedisTemplate.server();
         
+- `通道技术`：daoRedisTemplate.pipeline();
 
 ## 使用说明
 
