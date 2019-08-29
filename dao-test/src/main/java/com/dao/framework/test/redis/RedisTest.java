@@ -1,6 +1,8 @@
 package com.dao.framework.test.redis;
 
 import com.dao.framework.redis.abstracts.AbstractDaoRedisTemplate;
+import com.dao.framework.test.redis.pubsub.MyPubSub;
+import com.dao.framework.test.redis.pubsub.Subscribe;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -17,16 +19,20 @@ public class RedisTest implements InitializingBean {
 
     @Autowired
     private AbstractDaoRedisTemplate redisTemplate;
-//    @Autowired
-//    private AbstractDaoRedisTemplate daoRedisTemplate;
 
     @Autowired
-    private AbstractDaoRedisTemplate redisTemplateOne;
+    private MyPubSub myPubSub;
+
     @Override
     public void afterPropertiesSet() throws Exception {
-        redisTemplate.optionsForString().set("lll".getBytes(),"111".getBytes(),1000);
-        redisTemplate.optionsForString().setnx("ppp".getBytes(),"222".getBytes(),1000);
-        redisTemplate.optionsForString().setxx("yyy".getBytes(),"333".getBytes(),1000);
-//        daoRedisTemplate.optionsForString().set("dao","典狱");
+       new Thread(new Subscribe(redisTemplate,myPubSub,"dao-channel")).start();
+        int count=0;
+        while (count++<10){
+            Thread.sleep(100);
+            redisTemplate.hash().hset("dao-channel",count+"","message"+count);
+            redisTemplate.pubSub().publish("dao-channel","message"+count);
+        }
     }
 }
+
+
